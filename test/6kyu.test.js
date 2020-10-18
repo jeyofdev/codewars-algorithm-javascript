@@ -1,6 +1,7 @@
 const assert = require('assert');
 const findOdd = require('../src/6kyu/1-find_the_odd_int/findOdd');
 const duplicateEncode = require('../src/6kyu/2-duplicate_encoder/duplicateEncode');
+const toCamelCase = require('../src/6kyu/3-convert_string_to_camel_case/toCamelCase');
 
 
 describe("6kyu", () => {
@@ -22,6 +23,17 @@ describe("6kyu", () => {
             assert.strictEqual(duplicateEncode("recede"),"()()()");
             assert.strictEqual(duplicateEncode("Success"),")())())","should ignore case");
             assert.strictEqual(duplicateEncode("(( @"),"))((");
+        });
+    });
+
+
+    describe("toCamelCase", () => {
+        it("Convert string to camel case", () => {
+            assert.strictEqual(toCamelCase(''), '', "An empty string was provided but not returned")
+            assert.strictEqual(toCamelCase("the_stealth_warrior"), "theStealthWarrior", "toCamelCase('the_stealth_warrior') did not return correct value")
+            assert.strictEqual(toCamelCase("The-Stealth-Warrior"), "TheStealthWarrior", "toCamelCase('The-Stealth-Warrior') did not return correct value")
+            assert.strictEqual(toCamelCase("A-B-C"), "ABC", "toCamelCase('A-B-C') did not return correct value")
+
         });
     });
 });
