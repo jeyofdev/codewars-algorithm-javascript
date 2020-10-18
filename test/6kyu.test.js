@@ -3,7 +3,7 @@ const findOdd = require('../src/6kyu/1-find_the_odd_int/findOdd');
 const duplicateEncode = require('../src/6kyu/2-duplicate_encoder/duplicateEncode');
 const toCamelCase = require('../src/6kyu/3-convert_string_to_camel_case/toCamelCase');
 const countSmileys = require('../src/6kyu/4-count_the_smiley_faces/countSmileys');
-
+const comp = require('../src/6kyu/5-are_they_the_same/comp');
 
 
 describe("6kyu", () => {
@@ -46,6 +46,15 @@ describe("6kyu", () => {
             assert.strictEqual(countSmileys([':D',':~)',';~D',':)']), 4);
             assert.strictEqual(countSmileys([':)',':(',':D',':O',':;']), 2);
             assert.strictEqual(countSmileys([';]', ':[', ';*', ':$', ';-D']), 1);
+        });
+    });
+
+
+    describe("comp", () => {
+        it("Checks if the two arrays have the same elements, with the same multiplicities", () => {
+            arrA = [121, 144, 19, 161, 19, 144, 19, 11];
+            arrB = [11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19];
+            assert.strictEqual(comp(arrA, arrB), true);
         });
     });
 });
