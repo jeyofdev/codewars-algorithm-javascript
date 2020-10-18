@@ -4,6 +4,7 @@ const even_or_odd = require('../src/8kyu/2-even_or_odd/even_or_odd');
 const opposite_number = require('../src/8kyu/3-opposite_number/opposite_number');
 const repeatStr = require('../src/8kyu/4-string_repeat/string_repeat');
 const greet = require('../src/8kyu/5-jenny_secret_message/greet');
+const boolToWord = require('../src/8kyu/6-convert_boolean_values_to_strings_yes_or_no/boolToWord');
 
 
 
@@ -58,5 +59,13 @@ describe("greet", () => {
 
     it("should greet Johnny a little bit more special", () => {
         assert.strictEqual(greet("Johnny"), "Hello, my love!");
+    });
+});
+
+
+describe("boolToWord", () => {
+    it("Convert boolean values to strings 'Yes' or 'No'", () => {
+        assert.strictEqual(boolToWord(true), 'Yes');
+        assert.strictEqual(boolToWord(false), 'No');
     });
 });
