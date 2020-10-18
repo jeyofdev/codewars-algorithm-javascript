@@ -1,0 +1,22 @@
+{
+  "name": "codewars-algorithm-javascript",
+  "version": "1.0.0",
+  "description": "Here are my solutions to algorithm exercises [CodeWars](https://www.codewars.com/) for javascript language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeyofdev/codewars-algorithm-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeyofdev/codewars-algorithm-javascript/issues"
+  },
+  "homepage": "https://github.com/jeyofdev/codewars-algorithm-javascript#readme",
+  "dependencies": {
+    "mocha": "^8.2.0"
+  }
+}
