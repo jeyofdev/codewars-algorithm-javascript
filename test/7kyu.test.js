@@ -1,5 +1,7 @@
 const assert = require('assert');
 const getCount = require('../src/7kyu/1-vowel_count/getCount');
+const getMiddle = require('../src/7kyu/2-get_the_middle_character/getMiddle');
+
 
 
 describe("7kyu", () => {
@@ -12,4 +14,13 @@ describe("7kyu", () => {
         });
     });
 
+
+    describe("getMiddle", () => {
+        it("Get the Middle Character", () => {
+            assert.strictEqual(getMiddle("test"),"es");
+            assert.strictEqual(getMiddle("testing"),"t");
+            assert.strictEqual(getMiddle("middle"),"dd");
+            assert.strictEqual(getMiddle("A"),"A");
+        });
+    });
 });
