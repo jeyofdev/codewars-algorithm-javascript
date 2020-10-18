@@ -2,6 +2,8 @@ const assert = require('assert');
 const findOdd = require('../src/6kyu/1-find_the_odd_int/findOdd');
 const duplicateEncode = require('../src/6kyu/2-duplicate_encoder/duplicateEncode');
 const toCamelCase = require('../src/6kyu/3-convert_string_to_camel_case/toCamelCase');
+const countSmileys = require('../src/6kyu/4-count_the_smiley_faces/countSmileys');
+
 
 
 describe("6kyu", () => {
@@ -33,7 +35,17 @@ describe("6kyu", () => {
             assert.strictEqual(toCamelCase("the_stealth_warrior"), "theStealthWarrior", "toCamelCase('the_stealth_warrior') did not return correct value")
             assert.strictEqual(toCamelCase("The-Stealth-Warrior"), "TheStealthWarrior", "toCamelCase('The-Stealth-Warrior') did not return correct value")
             assert.strictEqual(toCamelCase("A-B-C"), "ABC", "toCamelCase('A-B-C') did not return correct value")
+        });
+    });
 
+
+    describe("countSmileys", () => {
+        it("Return the number of smileys", () => {
+            assert.strictEqual(toCamelCase(''), '', "An empty string was provided but not returned")
+            assert.strictEqual(countSmileys([]), 0);
+            assert.strictEqual(countSmileys([':D',':~)',';~D',':)']), 4);
+            assert.strictEqual(countSmileys([':)',':(',':D',':O',':;']), 2);
+            assert.strictEqual(countSmileys([';]', ':[', ';*', ':$', ';-D']), 1);
         });
     });
 });
