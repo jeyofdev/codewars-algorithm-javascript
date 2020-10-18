@@ -3,6 +3,8 @@ const multiply = require('../src/8kyu/1-multiply/multiply');
 const even_or_odd = require('../src/8kyu/2-even_or_odd/even_or_odd');
 const opposite_number = require('../src/8kyu/3-opposite_number/opposite_number');
 const repeatStr = require('../src/8kyu/4-string_repeat/string_repeat');
+const greet = require('../src/8kyu/5-jenny_secret_message/greet');
+
 
 
 describe("multiply", () => {
@@ -39,9 +41,22 @@ describe("opposite_number", () => {
 
 
 describe("repeatStr", () => {
-    it("return a string that exactly repeats the given src string", () => {
+    it("Return a string that exactly repeats the given src string", () => {
         assert.strictEqual(repeatStr(3, "*"), "***");
         assert.strictEqual(repeatStr(5, "#"), "#####");
         assert.strictEqual(repeatStr(2, "ha "), "ha ha ");
+    });
+});
+
+
+describe("greet", () => {
+    it("should greet some people normally", () => {
+        assert.strictEqual(greet("Jim"), "Hello, Jim!");
+        assert.strictEqual(greet("Jane"), "Hello, Jane!");
+        assert.strictEqual(greet("Simon"), "Hello, Simon!");
+    });
+
+    it("should greet Johnny a little bit more special", () => {
+        assert.strictEqual(greet("Johnny"), "Hello, my love!");
     });
 });
