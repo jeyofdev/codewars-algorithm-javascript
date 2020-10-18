@@ -2,6 +2,7 @@ const assert = require('assert');
 const multiply = require('../src/8kyu/1-multiply/multiply');
 const even_or_odd = require('../src/8kyu/2-even_or_odd/even_or_odd');
 const opposite_number = require('../src/8kyu/3-opposite_number/opposite_number');
+const repeatStr = require('../src/8kyu/4-string_repeat/string_repeat');
 
 
 describe("multiply", () => {
@@ -33,5 +34,14 @@ describe("opposite_number", () => {
         assert.strictEqual(opposite_number(-34), 34); 
         assert.strictEqual(opposite_number(3.3333333), -3.3333333); 
         assert.strictEqual(opposite_number(12525220.3325), -12525220.3325); 
+    });
+});
+
+
+describe("repeatStr", () => {
+    it("return a string that exactly repeats the given src string", () => {
+        assert.strictEqual(repeatStr(3, "*"), "***");
+        assert.strictEqual(repeatStr(5, "#"), "#####");
+        assert.strictEqual(repeatStr(2, "ha "), "ha ha ");
     });
 });
