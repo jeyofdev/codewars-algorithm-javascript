@@ -6,6 +6,8 @@ const repeatStr = require('../src/8kyu/4-string_repeat/string_repeat');
 const greet = require('../src/8kyu/5-jenny_secret_message/greet');
 const boolToWord = require('../src/8kyu/6-convert_boolean_values_to_strings_yes_or_no/boolToWord');
 const removeChar = require('../src/8kyu/7-remove_first_and_last_character/removeChar');
+const getCount = require('../src/8kyu/8-vowel_count/getCount');
+
 
 
 
@@ -79,5 +81,15 @@ describe("removeChar", () => {
         assert.strictEqual(removeChar('country'), 'ountr');
         assert.strictEqual(removeChar('person'), 'erso');
         assert.strictEqual(removeChar('place'), 'lac');
+    });
+});
+
+
+describe("getCount", () => {
+    it("Return the number (count) of vowels in the given string", () => {
+        assert.strictEqual(getCount("abracadabra"), 5);
+        assert.strictEqual(getCount("pear tree"), 4);
+        assert.strictEqual(getCount("o a kak ushakov lil vo kashu kakao"), 13);
+        assert.strictEqual(getCount("my pyx"), 0);
     });
 });
