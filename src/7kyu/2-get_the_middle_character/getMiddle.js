@@ -1,5 +1,5 @@
 /**
- * Get the Middle Character
+ * Get the middle character
  * 
  * @param {string} str 
  */

@@ -16,7 +16,7 @@ describe("7kyu", () => {
 
 
     describe("getMiddle", () => {
-        it("Get the Middle Character", () => {
+        it("Get the middle character", () => {
             assert.strictEqual(getMiddle("test"),"es");
             assert.strictEqual(getMiddle("testing"),"t");
             assert.strictEqual(getMiddle("middle"),"dd");
