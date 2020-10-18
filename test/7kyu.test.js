@@ -2,6 +2,7 @@ const assert = require('assert');
 const getCount = require('../src/7kyu/1-vowel_count/getCount');
 const getMiddle = require('../src/7kyu/2-get_the_middle_character/getMiddle');
 const toJadenCase = require('../src/7kyu/3-jaden_casing_strings/toJadenCase');
+const accum = require('../src/7kyu/4-mumbling/accum');
 
 
 describe("7kyu", () => {
@@ -32,6 +33,17 @@ describe("7kyu", () => {
 
             const strB = "The moment that truth is organized it becomes a lie.";
             assert.strictEqual(strB.toJadenCase(), "The Moment That Truth Is Organized It Becomes A Lie.");
+        });
+    });
+
+
+    describe("accum", () => {
+        it("Return a letter accumulator from a character string", () => {
+            assert.strictEqual(accum("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
+            assert.strictEqual(accum("NyffsGeyylB"), "N-Yy-Fff-Ffff-Sssss-Gggggg-Eeeeeee-Yyyyyyyy-Yyyyyyyyy-Llllllllll-Bbbbbbbbbbb");
+            assert.strictEqual(accum("MjtkuBovqrU"), "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu");
+            assert.strictEqual(accum("EvidjUnokmM"), "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm");
+            assert.strictEqual(accum("HbideVbxncC"), "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc");
         });
     });
 });
