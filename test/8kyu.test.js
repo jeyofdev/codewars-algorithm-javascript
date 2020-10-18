@@ -5,6 +5,8 @@ const opposite_number = require('../src/8kyu/3-opposite_number/opposite_number')
 const repeatStr = require('../src/8kyu/4-string_repeat/string_repeat');
 const greet = require('../src/8kyu/5-jenny_secret_message/greet');
 const boolToWord = require('../src/8kyu/6-convert_boolean_values_to_strings_yes_or_no/boolToWord');
+const removeChar = require('../src/8kyu/7-remove_first_and_last_character/removeChar');
+
 
 
 
@@ -67,5 +69,15 @@ describe("boolToWord", () => {
     it("Convert boolean values to strings 'Yes' or 'No'", () => {
         assert.strictEqual(boolToWord(true), 'Yes');
         assert.strictEqual(boolToWord(false), 'No');
+    });
+});
+
+
+describe("removeChar", () => {
+    it("Remove first and last character", () => {
+        assert.strictEqual(removeChar('eloquent'), 'loquen');
+        assert.strictEqual(removeChar('country'), 'ountr');
+        assert.strictEqual(removeChar('person'), 'erso');
+        assert.strictEqual(removeChar('place'), 'lac');
     });
 });
