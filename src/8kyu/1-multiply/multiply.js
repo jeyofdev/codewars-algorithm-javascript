@@ -1,5 +1,3 @@
-const { Module } = require("module");
-
 /**
  * Return the multiplication between 2 number
  * 
