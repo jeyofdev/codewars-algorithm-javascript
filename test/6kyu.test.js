@@ -4,6 +4,8 @@ const duplicateEncode = require('../src/6kyu/2-duplicate_encoder/duplicateEncode
 const toCamelCase = require('../src/6kyu/3-convert_string_to_camel_case/toCamelCase');
 const countSmileys = require('../src/6kyu/4-count_the_smiley_faces/countSmileys');
 const comp = require('../src/6kyu/5-are_they_the_same/comp');
+const longestConsec = require('../src/6kyu/6-consecutive_strings/longestConsec');
+
 
 
 describe("6kyu", () => {
@@ -55,6 +57,21 @@ describe("6kyu", () => {
             arrA = [121, 144, 19, 161, 19, 144, 19, 11];
             arrB = [11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19];
             assert.strictEqual(comp(arrA, arrB), true);
+        });
+    });
+
+
+    describe("longestConsec", () => {
+        it("Return the first longest string consisting of k consecutive strings taken in an array", () => {
+            assert.strictEqual(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2), "abigailtheta");
+            assert.strictEqual(longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1), "oocccffuucccjjjkkkjyyyeehh");
+            assert.strictEqual(longestConsec([], 3), "");
+            assert.strictEqual(longestConsec(["itvayloxrp","wkppqsztdkmvcuwvereiupccauycnjutlv","vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2), "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck");
+            assert.strictEqual(longestConsec(["wlwsasphmxx","owiaxujylentrklctozmymu","wpgozvxxiu"], 2), "wlwsasphmxxowiaxujylentrklctozmymu");
+            assert.strictEqual(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], -2), "");
+            assert.strictEqual(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 3), "ixoyx3452zzzzzzzzzzzz");
+            assert.strictEqual(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 15), "");
+            assert.strictEqual(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 0), "");
         });
     });
 });
