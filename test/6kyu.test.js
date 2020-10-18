@@ -1,5 +1,6 @@
 const assert = require('assert');
 const findOdd = require('../src/6kyu/1-find_the_odd_int/findOdd');
+const duplicateEncode = require('../src/6kyu/2-duplicate_encoder/duplicateEncode');
 
 
 describe("6kyu", () => {
@@ -11,6 +12,16 @@ describe("6kyu", () => {
             assert.strictEqual(findOdd([10]), 10);
             assert.strictEqual(findOdd([1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1]), 10);
             assert.strictEqual(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]), 1);
+        });
+    });
+
+
+    describe("duplicateEncode", () => {
+        it("Convert each character of a character string into an opening or closing parenthesis", () => {
+            assert.strictEqual(duplicateEncode("din"),"(((");
+            assert.strictEqual(duplicateEncode("recede"),"()()()");
+            assert.strictEqual(duplicateEncode("Success"),")())())","should ignore case");
+            assert.strictEqual(duplicateEncode("(( @"),"))((");
         });
     });
 });
