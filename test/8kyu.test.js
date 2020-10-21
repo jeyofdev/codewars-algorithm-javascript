@@ -8,6 +8,7 @@ const boolToWord = require('../src/8kyu/6-convert_boolean_values_to_strings_yes_
 const removeChar = require('../src/8kyu/7-remove_first_and_last_character/removeChar');
 const litres = require('../src/8kyu/8-keep_hydrated/litres');
 const formatMoney = require('../src/8kyu/9-dollars_and_cents/formatMoney');
+const fuelPrice = require('../src/8kyu/10-fuel_calculator/fuelPrice');
 
 
 describe('8kyu', () => {
@@ -102,6 +103,15 @@ describe('8kyu', () => {
             assert.strictEqual(formatMoney(39.99), '$39.99', 'That\'s not formatted the way we expected.');
             assert.strictEqual(formatMoney(3), '$3.00', 'That\'s not formatted the way we expected.');
             assert.strictEqual(formatMoney(3.1), '$3.10', 'That\'s not formatted the way we expected.');
+        });
+    });
+
+
+    describe('fuelPrice', () => {
+        it('Return the total fuel cost with a discount', () => {
+            assert.strictEqual(fuelPrice(5, 1.23), 5.65);
+            assert.strictEqual(fuelPrice(8, 2.5), 18.40);
+            assert.strictEqual(fuelPrice(5, 5.6), 27.50);
         });
     });
 });
