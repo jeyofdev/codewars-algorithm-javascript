@@ -7,6 +7,7 @@ const greet = require('../src/8kyu/5-jenny_secret_message/greet');
 const boolToWord = require('../src/8kyu/6-convert_boolean_values_to_strings_yes_or_no/boolToWord');
 const removeChar = require('../src/8kyu/7-remove_first_and_last_character/removeChar');
 const litres = require('../src/8kyu/8-keep_hydrated/litres');
+const formatMoney = require('../src/8kyu/9-dollars_and_cents/formatMoney');
 
 
 describe('8kyu', () => {
@@ -85,7 +86,6 @@ describe('8kyu', () => {
 
     describe('litres', () => {
         it('Return the number of liters per hour based on the number of hours elapsed', () => {
-            assert.strictEqual(removeChar('eloquent'), 'loquen');
             assert.strictEqual(litres(2), 1, 'should return 1 litre');
             assert.strictEqual(litres(1.4), 0, 'should return 0 litres');
             assert.strictEqual(litres(12.3), 6, 'should return 6 litres');
@@ -93,6 +93,15 @@ describe('8kyu', () => {
             assert.strictEqual(litres(11.8), 5, 'should return 5 litres');
             assert.strictEqual(litres(1787), 893, 'should return 893 litres');
             assert.strictEqual(litres(0), 0, 'should return 0 litres');
+        });
+    });
+
+
+    describe('formatMoney', () => {
+        it('Return the formatting of an amount in dollars and cents', () => {
+            assert.strictEqual(formatMoney(39.99), '$39.99', 'That\'s not formatted the way we expected.');
+            assert.strictEqual(formatMoney(3), '$3.00', 'That\'s not formatted the way we expected.');
+            assert.strictEqual(formatMoney(3.1), '$3.10', 'That\'s not formatted the way we expected.');
         });
     });
 });
