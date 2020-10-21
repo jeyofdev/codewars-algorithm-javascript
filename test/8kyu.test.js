@@ -9,6 +9,7 @@ const removeChar = require('../src/8kyu/7-remove_first_and_last_character/remove
 const litres = require('../src/8kyu/8-keep_hydrated/litres');
 const formatMoney = require('../src/8kyu/9-dollars_and_cents/formatMoney');
 const fuelPrice = require('../src/8kyu/10-fuel_calculator/fuelPrice');
+const basicOp = require('../src/8kyu/11-basic_mathematical_operations/basicOp');
 
 
 describe('8kyu', () => {
@@ -112,6 +113,16 @@ describe('8kyu', () => {
             assert.strictEqual(fuelPrice(5, 1.23), 5.65);
             assert.strictEqual(fuelPrice(8, 2.5), 18.40);
             assert.strictEqual(fuelPrice(5, 5.6), 27.50);
+        });
+    });
+
+
+    describe('basicOp', () => {
+        it('Perform an operation of addition, subtraction, multiplication or division between 2 numbers', () => {
+            assert.strictEqual(basicOp('+', 4, 7), 11);
+            assert.strictEqual(basicOp('-', 15, 18), -3);
+            assert.strictEqual(basicOp('*', 5, 5), 25);
+            assert.strictEqual(basicOp('/', 49, 7), 7);
         });
     });
 });
