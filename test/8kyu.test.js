@@ -11,7 +11,7 @@ const formatMoney = require('../src/8kyu/9-dollars_and_cents/formatMoney');
 const fuelPrice = require('../src/8kyu/10-fuel_calculator/fuelPrice');
 const basicOp = require('../src/8kyu/11-basic_mathematical_operations/basicOp');
 const countPositivesSumNegatives = require('../src/8kyu/12-count_of_positives_sum_of_negatives/countPositivesSumNegatives');
-
+const invert = require('../src/8kyu/13-invert_values/invert');
 
 
 describe('8kyu', () => {
@@ -133,6 +133,16 @@ describe('8kyu', () => {
         it('Return the number of positive numbers and the sum of negative numbers', () => {
             assert.deepStrictEqual(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]), [10, -65]);
             assert.deepStrictEqual(countPositivesSumNegatives([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14]), [8, -50]);
+        });
+    });
+
+
+    describe('invert', () => {
+        it('Return the inverse of an array of numbers', () => {
+            assert.deepStrictEqual(invert([1,2,3,4,5]), [-1,-2,-3,-4,-5]);
+            assert.deepStrictEqual(invert([1,-2,3,-4,5]), [-1,2,-3,4,-5]);
+            assert.deepStrictEqual(invert([]), []);
+            assert.deepStrictEqual(invert([0]), [0]);
         });
     });
 });
