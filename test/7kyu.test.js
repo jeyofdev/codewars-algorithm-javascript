@@ -4,6 +4,7 @@ const getMiddle = require('../src/7kyu/2-get_the_middle_character/getMiddle');
 const toJadenCase = require('../src/7kyu/3-jaden_casing_strings/toJadenCase');
 const accum = require('../src/7kyu/4-mumbling/accum');
 const inAscOrder = require('../src/7kyu/5-are_the_numbers_in_order/inAscOrder');
+const cookingTime = require('../src/7kyu/6-boiled_eggs/cookingTime');
 
 
 describe("7kyu", () => {
@@ -55,6 +56,17 @@ describe("7kyu", () => {
             assert.strictEqual(inAscOrder([1, 2, 3, 4, 5]), true, 'The list of numbers "1, 2, 3, 4, 5" is in ascending order');
             assert.strictEqual(inAscOrder([1, 6, 10, 18, 2, 4, 20]), false, 'The list of numbers "1, 6, 10, 18, 2, 4, 20" is not in ascending order');
             assert.strictEqual(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1]), false, 'The list of numbers "9, 8, 7, 6, 5, 4, 3, 2, 1" is in DESCENDING order not ascending order');
+        });
+    });
+
+
+    describe("cookingTime", () => {
+        it("Turn over the time in minutes needed to boil all the eggs", () => {
+            assert.strictEqual(cookingTime(0), 0, '0 eggs');
+            assert.strictEqual(cookingTime(5), 5, '5 eggs');
+            assert.strictEqual(cookingTime(10), 10, '10 eggs');
+            assert.strictEqual(cookingTime(16), 10, '16 eggs');
+            assert.strictEqual(cookingTime(20), 15, '20 eggs');
         });
     });
 });
