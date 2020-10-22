@@ -3,6 +3,7 @@ const getCount = require('../src/7kyu/1-vowel_count/getCount');
 const getMiddle = require('../src/7kyu/2-get_the_middle_character/getMiddle');
 const toJadenCase = require('../src/7kyu/3-jaden_casing_strings/toJadenCase');
 const accum = require('../src/7kyu/4-mumbling/accum');
+const inAscOrder = require('../src/7kyu/5-are_the_numbers_in_order/inAscOrder');
 
 
 describe("7kyu", () => {
@@ -44,6 +45,16 @@ describe("7kyu", () => {
             assert.strictEqual(accum("MjtkuBovqrU"), "M-Jj-Ttt-Kkkk-Uuuuu-Bbbbbb-Ooooooo-Vvvvvvvv-Qqqqqqqqq-Rrrrrrrrrr-Uuuuuuuuuuu");
             assert.strictEqual(accum("EvidjUnokmM"), "E-Vv-Iii-Dddd-Jjjjj-Uuuuuu-Nnnnnnn-Oooooooo-Kkkkkkkkk-Mmmmmmmmmm-Mmmmmmmmmmm");
             assert.strictEqual(accum("HbideVbxncC"), "H-Bb-Iii-Dddd-Eeeee-Vvvvvv-Bbbbbbb-Xxxxxxxx-Nnnnnnnnn-Cccccccccc-Ccccccccccc");
+        });
+    });
+
+
+    describe("inAscOrder", () => {
+        it("Check that the numbers in an array are in ascending order", () => {
+            assert.strictEqual(inAscOrder([1, 2, 4, 7, 19]), true, 'The list of numbers "1, 2, 4, 7, 19" is in ascending order');
+            assert.strictEqual(inAscOrder([1, 2, 3, 4, 5]), true, 'The list of numbers "1, 2, 3, 4, 5" is in ascending order');
+            assert.strictEqual(inAscOrder([1, 6, 10, 18, 2, 4, 20]), false, 'The list of numbers "1, 6, 10, 18, 2, 4, 20" is not in ascending order');
+            assert.strictEqual(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1]), false, 'The list of numbers "9, 8, 7, 6, 5, 4, 3, 2, 1" is in DESCENDING order not ascending order');
         });
     });
 });
