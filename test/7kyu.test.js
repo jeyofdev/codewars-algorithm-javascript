@@ -5,6 +5,7 @@ const toJadenCase = require('../src/7kyu/3-jaden_casing_strings/toJadenCase');
 const accum = require('../src/7kyu/4-mumbling/accum');
 const inAscOrder = require('../src/7kyu/5-are_the_numbers_in_order/inAscOrder');
 const cookingTime = require('../src/7kyu/6-boiled_eggs/cookingTime');
+const seriesSum = require('../src/7kyu/7-sum_of_the_first_nth_term_of_series/seriesSum');
 
 
 describe("7kyu", () => {
@@ -67,6 +68,16 @@ describe("7kyu", () => {
             assert.strictEqual(cookingTime(10), 10, '10 eggs');
             assert.strictEqual(cookingTime(16), 10, '16 eggs');
             assert.strictEqual(cookingTime(20), 15, '20 eggs');
+        });
+    });
+
+
+    describe("seriesSum", () => {
+        it("Return the sum of the following series up to the nth term (parameter)", () => {
+            assert.strictEqual(seriesSum(1), "1.00")
+            assert.strictEqual(seriesSum(2), "1.25")
+            assert.strictEqual(seriesSum(3), "1.39")
+            assert.strictEqual(seriesSum(4), "1.49")
         });
     });
 });
