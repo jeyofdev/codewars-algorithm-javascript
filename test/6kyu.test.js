@@ -7,6 +7,7 @@ const comp = require('../src/6kyu/5-are_they_the_same/comp');
 const longestConsec = require('../src/6kyu/6-consecutive_strings/longestConsec');
 const inArray = require('../src/6kyu/7-which_are_in/inArray');
 const digPow = require('../src/6kyu/8-playing_with_digits/digPow');
+const persistence = require('../src/6kyu/9-persistent_bugger/persistence');
 
 
 describe("6kyu", () => {
@@ -94,6 +95,16 @@ describe("6kyu", () => {
             assert.strictEqual(digPow(92, 1), -1)
             assert.strictEqual(digPow(46288, 3), 51)
 
+        });
+    });
+
+
+    describe("persistence", () => {
+        it("Return the multiplicative persistence of a number", () => {
+            assert.strictEqual(persistence(39),3);
+            assert.strictEqual(persistence(4),0);
+            assert.strictEqual(persistence(25),2);
+            assert.strictEqual(persistence(999),4);
         });
     });
 });
