@@ -98,4 +98,11 @@ describe("7kyu", () => {
             assert.strictEqual(breakChocolate(1, 1) , 0)
         });
     });
+
+
+    describe("solution", () => {
+        it("Return the largest 5-digit number in a series", () => {
+            assert.strictEqual(solution(1234567890), 67890);
+        });
+    });
 });
