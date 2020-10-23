@@ -5,7 +5,7 @@ const toCamelCase = require('../src/6kyu/3-convert_string_to_camel_case/toCamelC
 const countSmileys = require('../src/6kyu/4-count_the_smiley_faces/countSmileys');
 const comp = require('../src/6kyu/5-are_they_the_same/comp');
 const longestConsec = require('../src/6kyu/6-consecutive_strings/longestConsec');
-
+const inArray = require('../src/6kyu/7-which_are_in/inArray');
 
 
 describe("6kyu", () => {
@@ -72,6 +72,17 @@ describe("6kyu", () => {
             assert.strictEqual(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 3), "ixoyx3452zzzzzzzzzzzz");
             assert.strictEqual(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 15), "");
             assert.strictEqual(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 0), "");
+        });
+    });
+
+
+    describe("inArray", () => {
+        it("Return an array sorted r in lexicographical order arrA whose strings are substrings of strings of arrB.", () => {
+            a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+
+            assert.deepStrictEqual(inArray(["xyz", "live", "strong"], a2), ["live", "strong"])
+            assert.deepStrictEqual(inArray(["live", "strong", "arp"], a2), ["arp", "live", "strong"])
+            assert.deepStrictEqual(inArray(["tarp", "mice", "bull"], a2), [])
         });
     });
 });
