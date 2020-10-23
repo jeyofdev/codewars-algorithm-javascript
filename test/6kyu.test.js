@@ -6,6 +6,7 @@ const countSmileys = require('../src/6kyu/4-count_the_smiley_faces/countSmileys'
 const comp = require('../src/6kyu/5-are_they_the_same/comp');
 const longestConsec = require('../src/6kyu/6-consecutive_strings/longestConsec');
 const inArray = require('../src/6kyu/7-which_are_in/inArray');
+const digPow = require('../src/6kyu/8-playing_with_digits/digPow');
 
 
 describe("6kyu", () => {
@@ -83,6 +84,16 @@ describe("6kyu", () => {
             assert.deepStrictEqual(inArray(["xyz", "live", "strong"], a2), ["live", "strong"])
             assert.deepStrictEqual(inArray(["live", "strong", "arp"], a2), ["arp", "live", "strong"])
             assert.deepStrictEqual(inArray(["tarp", "mice", "bull"], a2), [])
+        });
+    });
+
+
+    describe("digPow", () => {
+        it("Return a positive integer k, if it exists, such that the sum of the digits of n taken to successive powers of p is equal to k * n.", () => {
+            assert.strictEqual(digPow(89, 1), 1)
+            assert.strictEqual(digPow(92, 1), -1)
+            assert.strictEqual(digPow(46288, 3), 51)
+
         });
     });
 });
