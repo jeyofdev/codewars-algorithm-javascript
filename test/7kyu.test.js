@@ -7,6 +7,8 @@ const inAscOrder = require('../src/7kyu/5-are_the_numbers_in_order/inAscOrder');
 const cookingTime = require('../src/7kyu/6-boiled_eggs/cookingTime');
 const seriesSum = require('../src/7kyu/7-sum_of_the_first_nth_term_of_series/seriesSum');
 const foldTo = require('../src/7kyu/8-folding_your_way_to_the_moon/foldTo');
+const breakChocolate = require('../src/7kyu/9-breaking_chocolate_problem/breakChocolate');
+const solution = require('../src/7kyu/10-largest_5_digit_number_in_a_series/solution');
 
 
 describe("7kyu", () => {
@@ -86,6 +88,14 @@ describe("7kyu", () => {
     describe("foldTo", () => {
         it("Turn over how many times you have to fold a sheet of paper to reach a distance.", () => {
             assert.strictEqual(foldTo(384000000),42)
+        });
+    });
+
+
+    describe("breakChocolate", () => {
+        it("Return the minimum number of breaks needed from a chocolate bar", () => {
+            assert.strictEqual(breakChocolate(5, 5) , 24)
+            assert.strictEqual(breakChocolate(1, 1) , 0)
         });
     });
 });
