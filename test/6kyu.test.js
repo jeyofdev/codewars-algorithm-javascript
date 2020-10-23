@@ -8,6 +8,7 @@ const longestConsec = require('../src/6kyu/6-consecutive_strings/longestConsec')
 const inArray = require('../src/6kyu/7-which_are_in/inArray');
 const digPow = require('../src/6kyu/8-playing_with_digits/digPow');
 const persistence = require('../src/6kyu/9-persistent_bugger/persistence');
+const sqInRect = require('../src/6kyu/10-rectangle_into_squares/sqInRect');
 
 
 describe("6kyu", () => {
@@ -99,12 +100,12 @@ describe("6kyu", () => {
     });
 
 
-    describe("persistence", () => {
-        it("Return the multiplicative persistence of a number", () => {
-            assert.strictEqual(persistence(39),3);
-            assert.strictEqual(persistence(4),0);
-            assert.strictEqual(persistence(25),2);
-            assert.strictEqual(persistence(999),4);
+    describe("sqInRect", () => {
+        it("Return an array with the size of each of the squares of a 'true' rectangle", () => {
+            assert.deepStrictEqual(sqInRect(5, 5), null)
+            assert.deepStrictEqual(sqInRect(5, 3), [3, 2, 1, 1])
+            assert.deepStrictEqual(sqInRect(3, 5), [3, 2, 1, 1])
+            assert.deepStrictEqual(sqInRect(20, 14), [14, 6, 6, 2, 2, 2])
         });
     });
 });
