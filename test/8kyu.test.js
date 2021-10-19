@@ -20,6 +20,7 @@ const getAverage = require('../src/8kyu/18-get_the_mean_of_an_array/getAverage')
 const positiveSum = require('../src/8kyu/19-sum_of_positive/positiveSum');
 const makeNegative = require('../src/8kyu/20-return_negative/makeNegative');
 const solution = require('../src/8kyu/21-reversed_string/solution');
+const summation = require('../src/8kyu/22-grasshopper_summation/summation');
 
 
 describe('8kyu', () => {
@@ -231,6 +232,14 @@ describe('8kyu', () => {
             assert.strictEqual(solution('hello'), 'olleh');
             assert.strictEqual(solution(''), '');
             assert.strictEqual(solution('h'), 'h');
+        });
+    });
+
+
+    describe('summation', () => {
+        it('Return the summation of every number from 1 to num', () => {
+            assert.strictEqual(summation(1), 1);
+            assert.strictEqual(summation(8), 36);
         });
     });
 });
