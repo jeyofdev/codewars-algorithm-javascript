@@ -9,6 +9,8 @@ const inArray = require('../src/6kyu/7-which_are_in/inArray');
 const digPow = require('../src/6kyu/8-playing_with_digits/digPow');
 const persistence = require('../src/6kyu/9-persistent_bugger/persistence');
 const sqInRect = require('../src/6kyu/10-rectangle_into_squares/sqInRect');
+const findNb = require('../src/6kyu/11-build_a_pile_of_cubes/findNb');
+
 
 
 describe("6kyu", () => {
@@ -106,6 +108,18 @@ describe("6kyu", () => {
             assert.deepStrictEqual(sqInRect(5, 3), [3, 2, 1, 1])
             assert.deepStrictEqual(sqInRect(3, 5), [3, 2, 1, 1])
             assert.deepStrictEqual(sqInRect(20, 14), [14, 6, 6, 2, 2, 2])
+        });
+    });
+
+
+    describe("findNb", () => {
+        it("Return the total number of cubes based on the total volume", () => {
+            assert.strictEqual(findNb(4183059834009), 2022)
+            assert.strictEqual(findNb(24723578342962), -1)
+            assert.strictEqual(findNb(135440716410000), 4824)
+            assert.strictEqual(findNb(40539911473216), 3568)
+            assert.strictEqual(findNb(1071225), 45)
+            assert.strictEqual(findNb(91716553919377), -1)
         });
     });
 });
