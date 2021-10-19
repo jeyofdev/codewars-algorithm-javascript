@@ -18,6 +18,7 @@ const mango = require('../src/8kyu/16-price_of_mangoes/mango');
 const hello = require('../src/8kyu/17-hello_name_or_world/hello');
 const getAverage = require('../src/8kyu/18-get_the_mean_of_an_array/getAverage');
 const positiveSum = require('../src/8kyu/19-sum_of_positive/positiveSum');
+const makeNegative = require('../src/8kyu/20-return-negative/makeNegative');
 
 
 describe('8kyu', () => {
@@ -208,6 +209,17 @@ describe('8kyu', () => {
             assert.strictEqual(positiveSum([]), 0);
             assert.strictEqual(positiveSum([-1,-2,-3,-4,-5]), 0);
             assert.strictEqual(positiveSum([-1,2,3,4,-5]), 9);
+        });
+    });
+    
+
+
+    describe('makeNegative', () => {
+        it('Return a negative number', () => {
+            assert.equal(makeNegative(1), -1);
+            assert.equal(makeNegative(-5), -5);
+            assert.equal(makeNegative(0), 0);
+            assert.equal(makeNegative(0.12), -0.12);
         });
     });
 });
