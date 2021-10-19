@@ -18,7 +18,8 @@ const mango = require('../src/8kyu/16-price_of_mangoes/mango');
 const hello = require('../src/8kyu/17-hello_name_or_world/hello');
 const getAverage = require('../src/8kyu/18-get_the_mean_of_an_array/getAverage');
 const positiveSum = require('../src/8kyu/19-sum_of_positive/positiveSum');
-const makeNegative = require('../src/8kyu/20-return-negative/makeNegative');
+const makeNegative = require('../src/8kyu/20-return_negative/makeNegative');
+const solution = require('../src/8kyu/21-reversed_string/solution');
 
 
 describe('8kyu', () => {
@@ -220,6 +221,16 @@ describe('8kyu', () => {
             assert.equal(makeNegative(-5), -5);
             assert.equal(makeNegative(0), 0);
             assert.equal(makeNegative(0.12), -0.12);
+        });
+    });
+
+
+    describe('solution', () => {
+        it('Reverse a string', () => {
+            assert.strictEqual(solution('world'), 'dlrow');
+            assert.strictEqual(solution('hello'), 'olleh');
+            assert.strictEqual(solution(''), '');
+            assert.strictEqual(solution('h'), 'h');
         });
     });
 });
