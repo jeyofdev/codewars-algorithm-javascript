@@ -22,6 +22,7 @@ const makeNegative = require('../src/8kyu/20-return_negative/makeNegative');
 const solution = require('../src/8kyu/21-reversed_string/solution');
 const summation = require('../src/8kyu/22-grasshopper_summation/summation');
 const noSpace = require('../src/8kyu/23-remove_string_spaces/noSpace');
+const SmallestIntegerFinder = require('../src/8kyu/24-find_the_smallest_integer_in_the_array/SmallestIntegerFinder');
 
 
 describe('8kyu', () => {
@@ -250,6 +251,19 @@ describe('8kyu', () => {
             assert.strictEqual(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'), '8j8mBliB8gimjB8B8jlB');
             assert.strictEqual(noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'), '88Bifk8hB8BB8BBBB888chl8BhBfd'); 
             assert.strictEqual(noSpace('8aaaaa dddd r     '), '8aaaaaddddr'); 
+        });
+    });
+
+
+    describe('SmallestIntegerFinder', () => {
+        let sif = new SmallestIntegerFinder();
+
+        it('Return the smallest integer', () => {
+            assert.strictEqual(sif.findSmallestInt([78,56,232,12,8]), 8, 'Should return the smallest int 8');
+            assert.strictEqual(sif.findSmallestInt([78,56,232,12,18]), 12, 'Should return the smallest int 12');
+            assert.strictEqual(sif.findSmallestInt([78,56,232,412,228]), 56, 'Should return the smallest int 56');
+            assert.strictEqual(sif.findSmallestInt([78,56,232,12,0]), 0, 'Should return the smallest int 0');
+            assert.strictEqual(sif.findSmallestInt([1,56,232,12,8]), 1, 'Should return the smallest int 1');
         });
     });
 });
