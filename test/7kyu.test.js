@@ -12,14 +12,15 @@ const solution = require('../src/7kyu/10-largest_5_digit_number_in_a_series/solu
 const maskify = require('../src/7kyu/11-credit_card_mask/maskify');
 const smallEnough = require('../src/7kyu/12-small_enough_beginner/smallEnough');
 const range = require('../src/7kyu/13-get_the_integers_between_two_numbers/range');
-const mergeArrays = require('../src/7kyu/14-merge-two-arrays/mergeArrays')
-const repeats = require('../src/7kyu/15-sum_of_array_singles/repeats')
-const filterString = require('../src/7kyu/16-filter_the_number/filterString')
-const splitInParts = require('../src/7kyu/17-split_in_parts/splitInParts')
-const highAndLow = require('../src/7kyu/18-highest_and_owest/highAndLow')
-const descendingOrder = require('../src/7kyu/19-descending_order/descendingOrder')
-const filterList = require('../src/7kyu/20-list_filtering/filterList')
-const isIsogram = require('../src/7kyu/21-isograms/isIsogram')
+const mergeArrays = require('../src/7kyu/14-merge-two-arrays/mergeArrays');
+const repeats = require('../src/7kyu/15-sum_of_array_singles/repeats');
+const filterString = require('../src/7kyu/16-filter_the_number/filterString');
+const splitInParts = require('../src/7kyu/17-split_in_parts/splitInParts');
+const highAndLow = require('../src/7kyu/18-highest_and_owest/highAndLow');
+const descendingOrder = require('../src/7kyu/19-descending_order/descendingOrder');
+const filterList = require('../src/7kyu/20-list_filtering/filterList');
+const isIsogram = require('../src/7kyu/21-isograms/isIsogram');
+const findShort = require('../src/7kyu/22-shortest-word/findShort');
 
 
 
@@ -213,6 +214,15 @@ describe("7kyu", () => {
             assert.strictEqual(isIsogram("moOse"), false, "same chars may not be same case" );
             assert.strictEqual(isIsogram("isIsogram"), false );
             assert.strictEqual(isIsogram(""), true, "an empty string is a valid isogram" );
+        });
+    });
+
+
+    describe("findShort", () => {
+        it("Return the length of the shortest word(s)", () => {
+            assert.strictEqual(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
+            assert.strictEqual(findShort("turns out random test cases are easier than writing out basic ones"), 3); 
+            assert.strictEqual(findShort("Let's travel abroad shall we"), 2);
         });
     });
 });
