@@ -16,6 +16,7 @@ const sum = require('../src/8kyu/14-sum_arrays/sum');
 const arrayPlusArray = require('../src/8kyu/15-array-plus-array/arrayPlusArray');
 const mango = require('../src/8kyu/16-price_of_mangoes/mango');
 const hello = require('../src/8kyu/17-hello_name_or_world/hello');
+const getAverage = require('../src/8kyu/18-get_the_mean_of_an_array/getAverage');
 
 
 describe('8kyu', () => {
@@ -184,6 +185,16 @@ describe('8kyu', () => {
             assert.strictEqual(hello('alice'), 'Hello, Alice!', "returns 'Hello, Alice!' when given 'alice'")
             assert.strictEqual(hello(), 'Hello, World!', "returns 'Hello, World!' when name is not given")
             assert.strictEqual(hello(''), 'Hello, World!', "returns 'Hello, World!' when name is an empty String" )
+        });
+    });
+    
+
+
+    describe('getAverage', () => {
+        it('Return the average of the given array rounded down to its nearest integer', () => {
+            assert.strictEqual(getAverage([2,2,2,2]),2);
+            assert.strictEqual(getAverage([1,2,3,4,5,]),3);
+            assert.strictEqual(getAverage([1,1,1,1,1,1,1,2]),1);
         });
     });
 });
