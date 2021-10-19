@@ -11,6 +11,7 @@ const breakChocolate = require('../src/7kyu/9-breaking_chocolate_problem/breakCh
 const solution = require('../src/7kyu/10-largest_5_digit_number_in_a_series/solution');
 const maskify = require('../src/7kyu/11-credit_card_mask/maskify');
 const smallEnough = require('../src/7kyu/12-small_enough_beginner/smallEnough');
+const range = require('../src/7kyu/13-get_the_integers_between_two_numbers/range');
 
 
 describe("7kyu", () => {
@@ -124,6 +125,15 @@ describe("7kyu", () => {
             assert.strictEqual(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100), false);
             assert.strictEqual(smallEnough([101, 45, 75, 105, 99, 107], 107), true);
             assert.strictEqual(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120), true);
+        });
+    });
+
+
+    describe("range", () => {
+        it("Return all the integers between two given numbers", () => {
+            assert.deepStrictEqual(range(2,9),[3,4,5,6,7,8])
+            assert.deepStrictEqual(range(6,8),[7])
+            assert.deepStrictEqual(range(2,9),[3,4,5,6,7,8])
         });
     });
 });
