@@ -11,6 +11,7 @@ const persistence = require('../src/6kyu/9-persistent_bugger/persistence');
 const sqInRect = require('../src/6kyu/10-rectangle_into_squares/sqInRect');
 const findNb = require('../src/6kyu/11-build_a_pile_of_cubes/findNb');
 const createPhoneNumber = require('../src/6kyu/12-create_phone_number/createPhoneNumber');
+const isValidWalk = require('../src/6kyu/13-take-a-ten-minute-walk/isValidWalk');
 
 
 
@@ -130,6 +131,17 @@ describe("6kyu", () => {
             assert.strictEqual(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]), "(123) 456-7890");
             assert.strictEqual(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), "(111) 111-1111");
             assert.strictEqual(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]), "(123) 456-7890");
+        });
+    });
+
+
+    describe("isValidWalk", () => {
+        it("Function that returns true if the walk takes exactly ten minutes", () => {
+            assert.strictEqual(isValidWalk(['n','s','n','s','n','s','n','s','n','s']), true);
+            assert.strictEqual(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']), false);
+            assert.strictEqual(isValidWalk(['w']), false);
+            assert.strictEqual(isValidWalk(['n','n','n','s','n','s','n','s','n','s']), false);
+
         });
     });
 });
