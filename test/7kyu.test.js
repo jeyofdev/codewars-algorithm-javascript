@@ -14,6 +14,7 @@ const smallEnough = require('../src/7kyu/12-small_enough_beginner/smallEnough');
 const range = require('../src/7kyu/13-get_the_integers_between_two_numbers/range');
 const mergeArrays = require('../src/7kyu/14-merge-two-arrays/mergeArrays')
 const repeats = require('../src/7kyu/15-sum_of_array_singles/repeats')
+const filterString = require('../src/7kyu/16-filter_the_number/filterString')
 
 
 describe("7kyu", () => {
@@ -157,6 +158,15 @@ describe("7kyu", () => {
             assert.deepStrictEqual(repeats([16, 0, 11, 4, 8, 16, 0, 11]), 12);
             assert.deepStrictEqual(repeats([5, 17, 18, 11, 13, 18, 11, 13]), 22);
             assert.deepStrictEqual(repeats([5, 10, 19, 13, 10, 13]), 24);        
+        });
+    });
+
+
+    describe("filterString", () => {
+        it("Return a number from a string", () => {
+            assert.strictEqual(filterString("123"), 123, 'Just return the numbers');
+            assert.strictEqual(filterString("a1b2c3"), 123, 'Just return the numbers');
+            assert.strictEqual(filterString("aa1bb2cc3dd"), 123, 'Just return the numbers')
         });
     });
 });
