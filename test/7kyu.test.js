@@ -19,6 +19,7 @@ const splitInParts = require('../src/7kyu/17-split_in_parts/splitInParts')
 const highAndLow = require('../src/7kyu/18-highest_and_owest/highAndLow')
 const descendingOrder = require('../src/7kyu/19-descending_order/descendingOrder')
 const filterList = require('../src/7kyu/20-list_filtering/filterList')
+const isIsogram = require('../src/7kyu/21-isograms/isIsogram')
 
 
 
@@ -204,11 +205,14 @@ describe("7kyu", () => {
     });
 
 
-    describe("filterList", () => {
-        it("Filter an array of integers and strings and return a new list with only strings", () => {
-            assert.deepStrictEqual(filterList([1,2,'a','b']),[1,2])
-            assert.deepStrictEqual(filterList([1,'a','b',0,15]),[1,0,15])
-            assert.deepStrictEqual(filterList([1,2,'aasf','1','123',123]),[1,2,123])
+    describe("isIsogram", () => {
+        it("Check if a string contains only letters is an isogram", () => {
+            assert.strictEqual(isIsogram("Dermatoglyphics"), true );
+            assert.strictEqual(isIsogram("isogram"), true );
+            assert.strictEqual(isIsogram("aba"), false, "same chars may not be adjacent" );
+            assert.strictEqual(isIsogram("moOse"), false, "same chars may not be same case" );
+            assert.strictEqual(isIsogram("isIsogram"), false );
+            assert.strictEqual(isIsogram(""), true, "an empty string is a valid isogram" );
         });
     });
 });
