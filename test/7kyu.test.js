@@ -13,6 +13,7 @@ const maskify = require('../src/7kyu/11-credit_card_mask/maskify');
 const smallEnough = require('../src/7kyu/12-small_enough_beginner/smallEnough');
 const range = require('../src/7kyu/13-get_the_integers_between_two_numbers/range');
 const mergeArrays = require('../src/7kyu/14-merge-two-arrays/mergeArrays')
+const repeats = require('../src/7kyu/15-sum_of_array_singles/repeats')
 
 
 describe("7kyu", () => {
@@ -132,9 +133,9 @@ describe("7kyu", () => {
 
     describe("range", () => {
         it("Return all the integers between two given numbers", () => {
-            assert.deepStrictEqual(range(2,9),[3,4,5,6,7,8])
-            assert.deepStrictEqual(range(6,8),[7])
-            assert.deepStrictEqual(range(2,9),[3,4,5,6,7,8])
+            assert.deepStrictEqual(range(2,9), [3,4,5,6,7,8])
+            assert.deepStrictEqual(range(6,8), [7])
+            assert.deepStrictEqual(range(2,9), [3,4,5,6,7,8])
         });
     });
 
@@ -145,7 +146,17 @@ describe("7kyu", () => {
             assert.deepStrictEqual(mergeArrays(['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]), ['a', 1, 'b', 2, 'c', 3, 'd', 4, 'e', 5]);
             assert.deepStrictEqual(mergeArrays([2, 5, 8, 23, 67, 6], ['b', 'r', 'a', 'u', 'r', 's']), [2, 'b', 5, 'r', 8, 'a', 23, 'u', 67, 'r', 6, 's']);
             assert.deepStrictEqual(mergeArrays(['b', 'r', 'a', 'u', 'r', 's', 'e', 'q', 'z'], [2, 5, 8, 23, 67, 6]), ['b', 2, 'r', 5, 'a', 8, 'u', 23, 'r', 67, 's', 6, 'e', 'q', 'z']);
-    
+        });
+    });
+
+
+    describe("repeats", () => {
+        it("Return the unique numbers from an array", () => {
+            assert.deepStrictEqual(repeats([4,5,7,5,4,8]), 15);
+            assert.deepStrictEqual(repeats([9, 10, 19, 13, 19, 13]), 19);
+            assert.deepStrictEqual(repeats([16, 0, 11, 4, 8, 16, 0, 11]), 12);
+            assert.deepStrictEqual(repeats([5, 17, 18, 11, 13, 18, 11, 13]), 22);
+            assert.deepStrictEqual(repeats([5, 10, 19, 13, 10, 13]), 24);        
         });
     });
 });
