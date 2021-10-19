@@ -21,6 +21,7 @@ const positiveSum = require('../src/8kyu/19-sum_of_positive/positiveSum');
 const makeNegative = require('../src/8kyu/20-return_negative/makeNegative');
 const solution = require('../src/8kyu/21-reversed_string/solution');
 const summation = require('../src/8kyu/22-grasshopper_summation/summation');
+const noSpace = require('../src/8kyu/23-remove_string_spaces/noSpace');
 
 
 describe('8kyu', () => {
@@ -240,6 +241,15 @@ describe('8kyu', () => {
         it('Return the summation of every number from 1 to num', () => {
             assert.strictEqual(summation(1), 1);
             assert.strictEqual(summation(8), 36);
+        });
+    });
+
+
+    describe('noSpace', () => {
+        it('Remove the spaces from the string', () => {
+            assert.strictEqual(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'), '8j8mBliB8gimjB8B8jlB');
+            assert.strictEqual(noSpace('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'), '88Bifk8hB8BB8BBBB888chl8BhBfd'); 
+            assert.strictEqual(noSpace('8aaaaa dddd r     '), '8aaaaaddddr'); 
         });
     });
 });
