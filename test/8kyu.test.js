@@ -17,6 +17,7 @@ const arrayPlusArray = require('../src/8kyu/15-array-plus-array/arrayPlusArray')
 const mango = require('../src/8kyu/16-price_of_mangoes/mango');
 const hello = require('../src/8kyu/17-hello_name_or_world/hello');
 const getAverage = require('../src/8kyu/18-get_the_mean_of_an_array/getAverage');
+const positiveSum = require('../src/8kyu/19-sum_of_positive/positiveSum');
 
 
 describe('8kyu', () => {
@@ -192,9 +193,21 @@ describe('8kyu', () => {
 
     describe('getAverage', () => {
         it('Return the average of the given array rounded down to its nearest integer', () => {
-            assert.strictEqual(getAverage([2,2,2,2]),2);
-            assert.strictEqual(getAverage([1,2,3,4,5,]),3);
-            assert.strictEqual(getAverage([1,1,1,1,1,1,1,2]),1);
+            assert.strictEqual(getAverage([2,2,2,2]), 2);
+            assert.strictEqual(getAverage([1,2,3,4,5,]), 3);
+            assert.strictEqual(getAverage([1,1,1,1,1,1,1,2]), 1);
+        });
+    });
+    
+
+
+    describe('positiveSum', () => {
+        it('Returns the sum of all positive numbers', () => {
+            assert.strictEqual(positiveSum([1,2,3,4,5]), 15);
+            assert.strictEqual(positiveSum([1,-2,3,4,5]), 13);
+            assert.strictEqual(positiveSum([]), 0);
+            assert.strictEqual(positiveSum([-1,-2,-3,-4,-5]), 0);
+            assert.strictEqual(positiveSum([-1,2,3,4,-5]), 9);
         });
     });
 });
