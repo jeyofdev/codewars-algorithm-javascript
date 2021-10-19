@@ -12,6 +12,7 @@ const fuelPrice = require('../src/8kyu/10-fuel_calculator/fuelPrice');
 const basicOp = require('../src/8kyu/11-basic_mathematical_operations/basicOp');
 const countPositivesSumNegatives = require('../src/8kyu/12-count_of_positives_sum_of_negatives/countPositivesSumNegatives');
 const invert = require('../src/8kyu/13-invert_values/invert');
+const sum = require('../src/8kyu/14-sum arrays/sum');
 
 
 describe('8kyu', () => {
@@ -143,6 +144,15 @@ describe('8kyu', () => {
             assert.deepStrictEqual(invert([1,-2,3,-4,5]), [-1,2,-3,4,-5]);
             assert.deepStrictEqual(invert([]), []);
             assert.deepStrictEqual(invert([0]), [0]);
+        });
+    });
+
+
+    describe('sum', () => {
+        it('Return the sum of numbers of an array', () => {
+            assert.strictEqual(sum([]), 0);
+            assert.strictEqual(sum([1, 5.2, 4, 0, -1]), 9.2);
+            assert.strictEqual(sum([-2.398]), -2.398);
         });
     });
 });
