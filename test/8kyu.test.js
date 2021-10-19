@@ -23,6 +23,7 @@ const solution = require('../src/8kyu/21-reversed_string/solution');
 const summation = require('../src/8kyu/22-grasshopper_summation/summation');
 const noSpace = require('../src/8kyu/23-remove_string_spaces/noSpace');
 const SmallestIntegerFinder = require('../src/8kyu/24-find_the_smallest_integer_in_the_array/SmallestIntegerFinder');
+const numberToString = require('../src/8kyu/25-convert_a_number_to_a_string/numberToString');
 
 
 describe('8kyu', () => {
@@ -264,6 +265,15 @@ describe('8kyu', () => {
             assert.strictEqual(sif.findSmallestInt([78,56,232,412,228]), 56, 'Should return the smallest int 56');
             assert.strictEqual(sif.findSmallestInt([78,56,232,12,0]), 0, 'Should return the smallest int 0');
             assert.strictEqual(sif.findSmallestInt([1,56,232,12,8]), 1, 'Should return the smallest int 1');
+        });
+    });
+
+
+    describe('numberToString', () => {
+        it('Convert a Number to a String', () => {
+            assert.strictEqual(numberToString(67), '67');
+            assert.strictEqual(numberToString(123), '123');
+            assert.strictEqual(numberToString(999), '999');
         });
     });
 });
