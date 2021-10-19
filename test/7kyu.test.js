@@ -17,6 +17,8 @@ const repeats = require('../src/7kyu/15-sum_of_array_singles/repeats')
 const filterString = require('../src/7kyu/16-filter_the_number/filterString')
 const splitInParts = require('../src/7kyu/17-split_in_parts/splitInParts')
 const highAndLow = require('../src/7kyu/18-highest_and_owest/highAndLow')
+const descendingOrder = require('../src/7kyu/19-descending_order/descendingOrder')
+
 
 
 describe("7kyu", () => {
@@ -185,6 +187,18 @@ describe("7kyu", () => {
     describe("highAndLow", () => {
         it("Return the highest and lowest number from a list of numbers from a string", () => {
             assert.strictEqual(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9"); 
+        });
+    });
+
+
+    describe("descendingOrder", () => {
+        it("Return the digits of a number in descending order", () => {
+            assert.strictEqual(descendingOrder(0), 0)
+            assert.strictEqual(descendingOrder(1), 1)
+            assert.strictEqual(descendingOrder(111), 111)
+            assert.strictEqual(descendingOrder(15), 51)
+            assert.strictEqual(descendingOrder(1021), 2110)
+            assert.strictEqual(descendingOrder(123456789), 987654321)
         });
     });
 });
