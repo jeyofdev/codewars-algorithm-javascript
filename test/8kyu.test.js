@@ -15,6 +15,7 @@ const invert = require('../src/8kyu/13-invert_values/invert');
 const sum = require('../src/8kyu/14-sum arrays/sum');
 const arrayPlusArray = require('../src/8kyu/15-array-plus-array/arrayPlusArray');
 const mango = require('../src/8kyu/16-price_of_mangoes/mango');
+const hello = require('../src/8kyu/17-hello-name-or-world/hello');
 
 
 describe('8kyu', () => {
@@ -173,6 +174,16 @@ describe('8kyu', () => {
         it('For a given quantity and price, return the total cost', () => {
             assert.strictEqual(mango(3, 3), 6);
             assert.strictEqual(mango(9, 5), 30);
+        });
+    });
+
+
+    describe('hello', () => {
+        it('Return "Hello, Name!" to a first name, or says Hello, World! if the name is not given', () => {
+            assert.strictEqual(hello('johN'), 'Hello, John!', "returns 'Hello, John!' when given 'johN'")
+            assert.strictEqual(hello('alice'), 'Hello, Alice!', "returns 'Hello, Alice!' when given 'alice'")
+            assert.strictEqual(hello(), 'Hello, World!', "returns 'Hello, World!' when name is not given")
+            assert.strictEqual(hello(''), 'Hello, World!', "returns 'Hello, World!' when name is an empty String" )
         });
     });
 });
