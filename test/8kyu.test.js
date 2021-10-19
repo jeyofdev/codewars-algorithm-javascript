@@ -24,6 +24,7 @@ const summation = require('../src/8kyu/22-grasshopper_summation/summation');
 const noSpace = require('../src/8kyu/23-remove_string_spaces/noSpace');
 const SmallestIntegerFinder = require('../src/8kyu/24-find_the_smallest_integer_in_the_array/SmallestIntegerFinder');
 const numberToString = require('../src/8kyu/25-convert_a_number_to_a_string/numberToString');
+const countSheeps = require('../src/8kyu/26-counting_sheep/countSheeps');
 
 
 describe('8kyu', () => {
@@ -274,6 +275,20 @@ describe('8kyu', () => {
             assert.strictEqual(numberToString(67), '67');
             assert.strictEqual(numberToString(123), '123');
             assert.strictEqual(numberToString(999), '999');
+        });
+    });
+
+
+    describe('countSheeps', () => {
+        const array1 = [true,  true,  true,  false,
+            true,  true,  true,  true ,
+            true,  false, true,  false,
+            true,  false, false, true ,
+            true,  true,  true,  true ,
+            false, false, true,  true ];
+
+        it('Return the number of times true is present in the array', () => {
+            assert.strictEqual(countSheeps(array1), 17, "There are 17 sheeps in total");
         });
     });
 });
