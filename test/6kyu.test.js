@@ -10,6 +10,7 @@ const digPow = require('../src/6kyu/8-playing_with_digits/digPow');
 const persistence = require('../src/6kyu/9-persistent_bugger/persistence');
 const sqInRect = require('../src/6kyu/10-rectangle_into_squares/sqInRect');
 const findNb = require('../src/6kyu/11-build_a_pile_of_cubes/findNb');
+const createPhoneNumber = require('../src/6kyu/12-create_phone_number/createPhoneNumber');
 
 
 
@@ -120,6 +121,15 @@ describe("6kyu", () => {
             assert.strictEqual(findNb(40539911473216), 3568)
             assert.strictEqual(findNb(1071225), 45)
             assert.strictEqual(findNb(91716553919377), -1)
+        });
+    });
+
+
+    describe("createPhoneNumber", () => {
+        it("Return a number array in the form of a phone number", () => {
+            assert.strictEqual(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]), "(123) 456-7890");
+            assert.strictEqual(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), "(111) 111-1111");
+            assert.strictEqual(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]), "(123) 456-7890");
         });
     });
 });
