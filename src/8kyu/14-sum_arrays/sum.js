@@ -5,10 +5,11 @@
  */
 const sum = (numbers) => {
     if (numbers.length !== 0) {
-        const reducer = (previousValue, currentValue) => previousValue + currentValue;
-        return numbers.reduce(reducer)
+        const reducer = (previousValue, currentValue) =>
+            previousValue + currentValue;
+        return numbers.reduce(reducer);
     }
-    
+
     return 0;
 };
 

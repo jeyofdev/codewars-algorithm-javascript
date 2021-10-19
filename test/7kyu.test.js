@@ -9,6 +9,7 @@ const seriesSum = require('../src/7kyu/7-sum_of_the_first_nth_term_of_series/ser
 const foldTo = require('../src/7kyu/8-folding_your_way_to_the_moon/foldTo');
 const breakChocolate = require('../src/7kyu/9-breaking_chocolate_problem/breakChocolate');
 const solution = require('../src/7kyu/10-largest_5_digit_number_in_a_series/solution');
+const maskify = require('../src/7kyu/11-credit_card_mask/maskify');
 
 
 describe("7kyu", () => {
@@ -103,6 +104,15 @@ describe("7kyu", () => {
     describe("solution", () => {
         it("Return the largest 5-digit number in a series", () => {
             assert.strictEqual(solution(1234567890), 67890);
+        });
+    });
+
+
+    describe("maskify", () => {
+        it("Return all but the last four characters into '#'.", () => {
+            assert.strictEqual(maskify('4556364607935616'), '############5616');
+            assert.strictEqual(maskify('1'), '1');
+            assert.strictEqual(maskify('11111'), '#1111');
         });
     });
 });

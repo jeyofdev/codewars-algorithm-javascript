@@ -12,10 +12,10 @@ const fuelPrice = require('../src/8kyu/10-fuel_calculator/fuelPrice');
 const basicOp = require('../src/8kyu/11-basic_mathematical_operations/basicOp');
 const countPositivesSumNegatives = require('../src/8kyu/12-count_of_positives_sum_of_negatives/countPositivesSumNegatives');
 const invert = require('../src/8kyu/13-invert_values/invert');
-const sum = require('../src/8kyu/14-sum arrays/sum');
+const sum = require('../src/8kyu/14-sum_arrays/sum');
 const arrayPlusArray = require('../src/8kyu/15-array-plus-array/arrayPlusArray');
 const mango = require('../src/8kyu/16-price_of_mangoes/mango');
-const hello = require('../src/8kyu/17-hello-name-or-world/hello');
+const hello = require('../src/8kyu/17-hello_name_or_world/hello');
 
 
 describe('8kyu', () => {
