@@ -14,6 +14,7 @@ const createPhoneNumber = require('../src/6kyu/12-create_phone_number/createPhon
 const isValidWalk = require('../src/6kyu/13-take-a-ten-minute-walk/isValidWalk');
 const digitalRoot = require('../src/6kyu/14-sum_of_digits_digital_root/digitalRoot');
 const likes = require('../src/6kyu/15-who_likes_it/likes');
+const arrayDiff = require('../src/6kyu/16-array_diff/arrayDiff');
 
 
 
@@ -163,6 +164,16 @@ describe("6kyu", () => {
             assert.strictEqual(likes(['Jacob', 'Alex']), 'Jacob and Alex like this');
             assert.strictEqual(likes(['Max', 'John', 'Mark']), 'Max, John and Mark like this');
             assert.strictEqual(likes(['Alex', 'Jacob', 'Mark', 'Max']), 'Alex, Jacob and 2 others like this');
+        });
+    });
+
+
+    describe("arrayDiff", () => {
+        it("Remove all the values from an array a that are present in an array b, keeping their order.", () => {
+            assert.deepStrictEqual(arrayDiff([], [4,5]), [], "a was [], b was [4,5]");
+            assert.deepStrictEqual(arrayDiff([3,4], [3]), [4], "a was [3,4], b was [3]");
+            assert.deepStrictEqual(arrayDiff([1,8,2], []), [1,8,2], "a was [1,8,2], b was []");
+            assert.deepStrictEqual(arrayDiff([1,2,3], [1,2]), [3], "a was [1,2,3], b was [1,2]");
         });
     });
 });
