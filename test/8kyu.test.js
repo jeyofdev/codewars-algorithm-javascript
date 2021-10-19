@@ -27,6 +27,7 @@ const numberToString = require('../src/8kyu/25-convert_a_number_to_a_string/numb
 const countSheeps = require('../src/8kyu/26-counting_sheep/countSheeps');
 const isDivisible = require('../src/8kyu/27-Is_n_divisible_by_x_and_y/isDivisible');
 const digitize = require('../src/8kyu/28-convert_number_to_reversed_array_of_digits/digitize');
+const abbrevName = require('../src/8kyu/29-abbreviate_a_two_word_name/abbrevName');
 
 
 describe('8kyu', () => {
@@ -279,8 +280,8 @@ describe('8kyu', () => {
             assert.strictEqual(numberToString(999), '999');
         });
     });
-    
-    
+
+
     describe('countSheeps', () => {
         const array1 = [
             true,  true,  true,  false,
@@ -311,6 +312,17 @@ describe('8kyu', () => {
         it('Return the digits of a number n in an array in reverse order', () => {
             assert.deepStrictEqual(digitize(35231), [1,3,2,5,3]);
             assert.deepStrictEqual(digitize(348597), [7,9,5,8,4,3]);
+        });
+    });
+
+
+    describe('abbrevName', () => {
+        it('Convert a name to initials', () => {
+            assert.strictEqual(abbrevName("Sam Harris"), "S.H");
+            assert.strictEqual(abbrevName("Patrick Feenan"), "P.F");
+            assert.strictEqual(abbrevName("Evan Cole"), "E.C");
+            assert.strictEqual(abbrevName("P Favuzzi"), "P.F");
+            assert.strictEqual(abbrevName("David Mendieta"), "D.M");
         });
     });
 });
