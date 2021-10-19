@@ -12,6 +12,7 @@ const sqInRect = require('../src/6kyu/10-rectangle_into_squares/sqInRect');
 const findNb = require('../src/6kyu/11-build_a_pile_of_cubes/findNb');
 const createPhoneNumber = require('../src/6kyu/12-create_phone_number/createPhoneNumber');
 const isValidWalk = require('../src/6kyu/13-take-a-ten-minute-walk/isValidWalk');
+const digitalRoot = require('../src/6kyu/14-sum_of_digits_digital_root/digitalRoot');
 
 
 
@@ -142,6 +143,14 @@ describe("6kyu", () => {
             assert.strictEqual(isValidWalk(['w']), false);
             assert.strictEqual(isValidWalk(['n','n','n','s','n','s','n','s','n','s']), false);
 
+        });
+    });
+
+
+    describe("digitalRoot", () => {
+        it("Return the numeric root of all digits in a number.", () => {
+            assert.strictEqual(digitalRoot(16), 7);
+            assert.strictEqual(digitalRoot(456), 6);
         });
     });
 });
