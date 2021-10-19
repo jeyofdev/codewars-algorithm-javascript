@@ -1,7 +1,7 @@
 /**
  * Return the number of times true is present in the array
  *
- * @param {boolean} arrayOfSheep
+ * @param {array} arrayOfSheep
  */
 const countSheeps = (arrayOfSheep) => {
     let num = 0;
