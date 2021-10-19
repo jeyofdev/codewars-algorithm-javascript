@@ -14,6 +14,7 @@ const countPositivesSumNegatives = require('../src/8kyu/12-count_of_positives_su
 const invert = require('../src/8kyu/13-invert_values/invert');
 const sum = require('../src/8kyu/14-sum arrays/sum');
 const arrayPlusArray = require('../src/8kyu/15-array-plus-array/arrayPlusArray');
+const mango = require('../src/8kyu/16-price_of_mangoes/mango');
 
 
 describe('8kyu', () => {
@@ -158,12 +159,20 @@ describe('8kyu', () => {
     });
 
 
-    describe('array_plus_array', () => {
+    describe('arrayPlusArray', () => {
         it('Returns the sum of 2 arrays of numbers', () => {
             assert.strictEqual(arrayPlusArray([1, 2, 3], [4, 5, 6]), 21);
             assert.strictEqual(arrayPlusArray([-1, -2, -3], [-4, -5, -6]), -21);
             assert.strictEqual(arrayPlusArray([0, 0, 0], [4, 5, 6]), 15);
             assert.strictEqual(arrayPlusArray([100, 200, 300], [400, 500, 600]), 2100);
+        });
+    });
+
+
+    describe('mango', () => {
+        it('For a given quantity and price, return the total cost', () => {
+            assert.strictEqual(mango(3, 3), 6);
+            assert.strictEqual(mango(9, 5), 30);
         });
     });
 });
