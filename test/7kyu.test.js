@@ -18,6 +18,7 @@ const filterString = require('../src/7kyu/16-filter_the_number/filterString')
 const splitInParts = require('../src/7kyu/17-split_in_parts/splitInParts')
 const highAndLow = require('../src/7kyu/18-highest_and_owest/highAndLow')
 const descendingOrder = require('../src/7kyu/19-descending_order/descendingOrder')
+const filterList = require('../src/7kyu/20-list_filtering/filterList')
 
 
 
@@ -199,6 +200,15 @@ describe("7kyu", () => {
             assert.strictEqual(descendingOrder(15), 51)
             assert.strictEqual(descendingOrder(1021), 2110)
             assert.strictEqual(descendingOrder(123456789), 987654321)
+        });
+    });
+
+
+    describe("filterList", () => {
+        it("Filter an array of integers and strings and return a new list with only strings", () => {
+            assert.deepStrictEqual(filterList([1,2,'a','b']),[1,2])
+            assert.deepStrictEqual(filterList([1,'a','b',0,15]),[1,0,15])
+            assert.deepStrictEqual(filterList([1,2,'aasf','1','123',123]),[1,2,123])
         });
     });
 });
