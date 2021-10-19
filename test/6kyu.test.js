@@ -15,6 +15,7 @@ const isValidWalk = require('../src/6kyu/13-take-a-ten-minute-walk/isValidWalk')
 const digitalRoot = require('../src/6kyu/14-sum_of_digits_digital_root/digitalRoot');
 const likes = require('../src/6kyu/15-who_likes_it/likes');
 const arrayDiff = require('../src/6kyu/16-array_diff/arrayDiff');
+const makeSentence = require('../src/6kyu/17-simple-sentences/makeSentence');
 
 
 
@@ -169,11 +170,18 @@ describe("6kyu", () => {
 
 
     describe("arrayDiff", () => {
-        it("Remove all the values from an array a that are present in an array b, keeping their order.", () => {
+        it("Remove all the values from an array a that are present in an array b, keeping their order", () => {
             assert.deepStrictEqual(arrayDiff([], [4,5]), [], "a was [], b was [4,5]");
             assert.deepStrictEqual(arrayDiff([3,4], [3]), [4], "a was [3,4], b was [3]");
             assert.deepStrictEqual(arrayDiff([1,8,2], []), [1,8,2], "a was [1,8,2], b was []");
             assert.deepStrictEqual(arrayDiff([1,2,3], [1,2]), [3], "a was [1,2,3], b was [1,2]");
+        });
+    });
+
+
+    describe("makeSentence", () => {
+        it("Return a sentence out of the given parts", () => {
+            assert.strictEqual(makeSentence(['hello', 'world']), 'hello world.');
         });
     });
 });
