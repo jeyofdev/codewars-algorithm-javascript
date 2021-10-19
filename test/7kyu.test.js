@@ -10,6 +10,7 @@ const foldTo = require('../src/7kyu/8-folding_your_way_to_the_moon/foldTo');
 const breakChocolate = require('../src/7kyu/9-breaking_chocolate_problem/breakChocolate');
 const solution = require('../src/7kyu/10-largest_5_digit_number_in_a_series/solution');
 const maskify = require('../src/7kyu/11-credit_card_mask/maskify');
+const smallEnough = require('../src/7kyu/12-small_enough_beginner/smallEnough');
 
 
 describe("7kyu", () => {
@@ -113,6 +114,16 @@ describe("7kyu", () => {
             assert.strictEqual(maskify('4556364607935616'), '############5616');
             assert.strictEqual(maskify('1'), '1');
             assert.strictEqual(maskify('11111'), '#1111');
+        });
+    });
+
+
+    describe("smallEnough", () => {
+        it("Check that all the values in a table are less than or equal to a limit value", () => {
+            assert.strictEqual(smallEnough([66, 101], 200), true);
+            assert.strictEqual(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100), false);
+            assert.strictEqual(smallEnough([101, 45, 75, 105, 99, 107], 107), true);
+            assert.strictEqual(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120), true);
         });
     });
 });
