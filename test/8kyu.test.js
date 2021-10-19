@@ -26,6 +26,7 @@ const SmallestIntegerFinder = require('../src/8kyu/24-find_the_smallest_integer_
 const numberToString = require('../src/8kyu/25-convert_a_number_to_a_string/numberToString');
 const countSheeps = require('../src/8kyu/26-counting_sheep/countSheeps');
 const isDivisible = require('../src/8kyu/27-Is_n_divisible_by_x_and_y/isDivisible');
+const digitize = require('../src/8kyu/28-convert_number_to_reversed_array_of_digits/digitize');
 
 
 describe('8kyu', () => {
@@ -281,16 +282,17 @@ describe('8kyu', () => {
     
     
     describe('countSheeps', () => {
-        const array1 = [true,  true,  true,  false,
+        const array1 = [
+            true,  true,  true,  false,
             true,  true,  true,  true ,
             true,  false, true,  false,
             true,  false, false, true ,
             true,  true,  true,  true ,
-            false, false, true,  true ];
+            false, false, true,  true 
+        ];
             
-            it('Return the number of times true is present in the array', () => {
-                assert.strictEqual(countSheeps(array1), 17, "There are 17 sheeps in total");
-            });
+        it('Return the number of times true is present in the array', () => {
+            assert.strictEqual(countSheeps(array1), 17, "There are 17 sheeps in total");
         });
     });
 
@@ -303,3 +305,12 @@ describe('8kyu', () => {
             assert.strictEqual(isDivisible(48,3,4), true);
         });
     });
+
+
+    describe('digitize', () => {
+        it('Return the digits of a number n in an array in reverse order', () => {
+            assert.deepStrictEqual(digitize(35231), [1,3,2,5,3]);
+            assert.deepStrictEqual(digitize(348597), [7,9,5,8,4,3]);
+        });
+    });
+});
