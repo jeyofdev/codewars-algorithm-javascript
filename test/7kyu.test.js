@@ -16,6 +16,7 @@ const mergeArrays = require('../src/7kyu/14-merge-two-arrays/mergeArrays')
 const repeats = require('../src/7kyu/15-sum_of_array_singles/repeats')
 const filterString = require('../src/7kyu/16-filter_the_number/filterString')
 const splitInParts = require('../src/7kyu/17-split_in_parts/splitInParts')
+const highAndLow = require('../src/7kyu/18-highest_and_owest/highAndLow')
 
 
 describe("7kyu", () => {
@@ -177,6 +178,13 @@ describe("7kyu", () => {
             assert.strictEqual(splitInParts("supercalifragilisticexpialidocious", 3), "sup erc ali fra gil ist ice xpi ali doc iou s")
             assert.strictEqual(splitInParts("HelloKata", 1), "H e l l o K a t a")
             assert.strictEqual(splitInParts("HelloKata", 9), "HelloKata")
+        });
+    });
+
+
+    describe("highAndLow", () => {
+        it("Return the highest and lowest number from a list of numbers from a string", () => {
+            assert.strictEqual(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9"); 
         });
     });
 });
