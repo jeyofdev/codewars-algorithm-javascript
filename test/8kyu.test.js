@@ -13,6 +13,7 @@ const basicOp = require('../src/8kyu/11-basic_mathematical_operations/basicOp');
 const countPositivesSumNegatives = require('../src/8kyu/12-count_of_positives_sum_of_negatives/countPositivesSumNegatives');
 const invert = require('../src/8kyu/13-invert_values/invert');
 const sum = require('../src/8kyu/14-sum arrays/sum');
+const arrayPlusArray = require('../src/8kyu/15-array-plus-array/arrayPlusArray');
 
 
 describe('8kyu', () => {
@@ -153,6 +154,16 @@ describe('8kyu', () => {
             assert.strictEqual(sum([]), 0);
             assert.strictEqual(sum([1, 5.2, 4, 0, -1]), 9.2);
             assert.strictEqual(sum([-2.398]), -2.398);
+        });
+    });
+
+
+    describe('array_plus_array', () => {
+        it('Returns the sum of 2 arrays of numbers', () => {
+            assert.strictEqual(arrayPlusArray([1, 2, 3], [4, 5, 6]), 21);
+            assert.strictEqual(arrayPlusArray([-1, -2, -3], [-4, -5, -6]), -21);
+            assert.strictEqual(arrayPlusArray([0, 0, 0], [4, 5, 6]), 15);
+            assert.strictEqual(arrayPlusArray([100, 200, 300], [400, 500, 600]), 2100);
         });
     });
 });
