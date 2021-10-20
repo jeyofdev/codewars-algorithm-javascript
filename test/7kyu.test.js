@@ -26,6 +26,7 @@ const reverseWords = require('../src/7kyu/24-reverse_words/reverseWords');
 const oddOrEven = require('../src/7kyu/25-odd_or_even/oddOrEven');
 const stringEndsWith = require('../src/7kyu/26-string_ends_with/stringEndsWith');
 const removeSmallest = require('../src/7kyu/27-remove_the_minimum/removeSmallest');
+const stray = require('../src/7kyu/28-find_the_stray_number/stray');
 
 
 
@@ -302,6 +303,14 @@ describe("7kyu", () => {
                 let l = arr.length;
                 assert.deepStrictEqual(removeSmallest(arr).length, l - 1, `Wrong result for ${arr}`);
             }
+        });
+    });
+
+
+    describe("stray", () => {
+        it("Return the unique number of an array", () => {
+            assert.strictEqual(stray([1, 1, 2]), 2);
+            assert.strictEqual(stray([17, 17, 3, 17, 17, 17, 17]), 3);
         });
     });
 });
