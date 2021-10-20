@@ -24,6 +24,7 @@ const findShort = require('../src/7kyu/22-shortest-word/findShort');
 const number = require('../src/7kyu/23-number_of_people_in_the_bus/number');
 const reverseWords = require('../src/7kyu/24-reverse_words/reverseWords');
 const oddOrEven = require('../src/7kyu/25-odd_or_even/oddOrEven');
+const stringEndsWith = require('../src/7kyu/26-string_ends_with/stringEndsWith');
 
 
 
@@ -252,21 +253,29 @@ describe("7kyu", () => {
 
     describe("oddOrEven", () => {
         it("Return if the sum of elements of an array is odd or even", () => {
-            assert.strictEqual(oddOrEven([0]), 'even')
-            assert.strictEqual(oddOrEven([1]), 'odd')
-            assert.strictEqual(oddOrEven([]), 'even')
-            assert.strictEqual(oddOrEven([0, 1, 5]), 'even')
-            assert.strictEqual(oddOrEven([0, 1, 3]), 'even')
-            assert.strictEqual(oddOrEven([1023, 1, 2]), 'even')
-            assert.strictEqual(oddOrEven([0, -1, -5]), 'even')
-            assert.strictEqual(oddOrEven([0, -1, -3]), 'even')
-            assert.strictEqual(oddOrEven([-1023, 1, -2]), 'even')
-            assert.strictEqual(oddOrEven([0, 1, 2]), 'odd')
-            assert.strictEqual(oddOrEven([0, 1, 4]), 'odd')
-            assert.strictEqual(oddOrEven([1023, 1, 3]), 'odd')
-            assert.strictEqual(oddOrEven([0, -1, 2]), 'odd')
-            assert.strictEqual(oddOrEven([0, 1, -4]), 'odd')
-            assert.strictEqual(oddOrEven([-1023, -1, 3]), 'odd')
+            assert.strictEqual(oddOrEven([0]), 'even');
+            assert.strictEqual(oddOrEven([1]), 'odd');
+            assert.strictEqual(oddOrEven([]), 'even');
+            assert.strictEqual(oddOrEven([0, 1, 5]), 'even');
+            assert.strictEqual(oddOrEven([0, 1, 3]), 'even');
+            assert.strictEqual(oddOrEven([1023, 1, 2]), 'even');
+            assert.strictEqual(oddOrEven([0, -1, -5]), 'even');
+            assert.strictEqual(oddOrEven([0, -1, -3]), 'even');
+            assert.strictEqual(oddOrEven([-1023, 1, -2]), 'even');
+            assert.strictEqual(oddOrEven([0, 1, 2]), 'odd');
+            assert.strictEqual(oddOrEven([0, 1, 4]), 'odd');
+            assert.strictEqual(oddOrEven([1023, 1, 3]), 'odd');
+            assert.strictEqual(oddOrEven([0, -1, 2]), 'odd');
+            assert.strictEqual(oddOrEven([0, 1, -4]), 'odd');
+            assert.strictEqual(oddOrEven([-1023, -1, 3]), 'odd');
+        });
+    });
+
+
+    describe("stringEndsWith", () => {
+        it("Check that the first argument passed ends with the 2nd argument", () => {
+            assert.strictEqual(stringEndsWith('abcde', 'cde'), true);
+            assert.strictEqual(stringEndsWith('abcde', 'abc'), false);      
         });
     });
 });
