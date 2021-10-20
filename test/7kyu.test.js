@@ -22,6 +22,7 @@ const filterList = require('../src/7kyu/20-list_filtering/filterList');
 const isIsogram = require('../src/7kyu/21-isograms/isIsogram');
 const findShort = require('../src/7kyu/22-shortest-word/findShort');
 const number = require('../src/7kyu/23-number_of_people_in_the_bus/number');
+const reverseWords = require('../src/7kyu/24-reverse_words/reverseWords');
 
 
 
@@ -234,6 +235,16 @@ describe("7kyu", () => {
             assert.strictEqual(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]), 17);
             assert.strictEqual(number([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]), 21);
             assert.strictEqual(number([[0,0]]), 0);
+        });
+    });
+
+
+    describe("reverseWords", () => {
+        it("Return a string with every word reversed", () => {
+            assert.strictEqual(reverseWords('The quick brown fox jumps over the lazy dog.'), 'ehT kciuq nworb xof spmuj revo eht yzal .god');
+            assert.strictEqual(reverseWords('apple'), 'elppa');
+            assert.strictEqual(reverseWords('a b c d'), 'a b c d');
+            assert.strictEqual(reverseWords('double  spaced  words'), 'elbuod  decaps  sdrow');
         });
     });
 });
