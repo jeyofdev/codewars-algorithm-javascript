@@ -25,6 +25,7 @@ const number = require('../src/7kyu/23-number_of_people_in_the_bus/number');
 const reverseWords = require('../src/7kyu/24-reverse_words/reverseWords');
 const oddOrEven = require('../src/7kyu/25-odd_or_even/oddOrEven');
 const stringEndsWith = require('../src/7kyu/26-string_ends_with/stringEndsWith');
+const removeSmallest = require('../src/7kyu/27-remove_the_minimum/removeSmallest');
 
 
 
@@ -276,6 +277,31 @@ describe("7kyu", () => {
         it("Check that the first argument passed ends with the 2nd argument", () => {
             assert.strictEqual(stringEndsWith('abcde', 'cde'), true);
             assert.strictEqual(stringEndsWith('abcde', 'abc'), false);      
+        });
+    });
+
+
+    describe("removeSmallest", () => {
+        it("Remove the smallest number from an array", () => {
+            assert.deepStrictEqual(removeSmallest([1, 2, 3, 4, 5]), [2, 3, 4, 5], "Wrong result for [1, 2, 3, 4, 5]");
+            assert.deepStrictEqual(removeSmallest([5, 3, 2, 1, 4]), [5, 3, 2, 4], "Wrong result for [5, 3, 2, 1, 4]");
+            assert.deepStrictEqual(removeSmallest([2, 2, 1, 2, 1]), [2, 2, 2, 1], "Wrong result for [2, 2, 1, 2, 1]");
+            assert.deepStrictEqual(removeSmallest([]), [], "Wrong result for []");
+
+            for (let i = 0; i < 10; ++i) {
+                let x = ~~(Math.random() * 400);
+                assert.deepStrictEqual(removeSmallest([x]), [], `Wrong result for ${[x]}`);
+            }
+
+            function randomArray(length) {
+                return Array.from({length: length}, () => ~~(Math.random() * 400));
+            }
+
+            for(let i = 0; i < 10; ++i) {
+                let arr = randomArray(~~(Math.random() * 10) + 1);
+                let l = arr.length;
+                assert.deepStrictEqual(removeSmallest(arr).length, l - 1, `Wrong result for ${arr}`);
+            }
         });
     });
 });
