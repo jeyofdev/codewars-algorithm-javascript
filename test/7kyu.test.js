@@ -27,6 +27,7 @@ const oddOrEven = require('../src/7kyu/25-odd_or_even/oddOrEven');
 const stringEndsWith = require('../src/7kyu/26-string_ends_with/stringEndsWith');
 const removeSmallest = require('../src/7kyu/27-remove_the_minimum/removeSmallest');
 const stray = require('../src/7kyu/28-find_the_stray_number/stray');
+const openOrSenior = require('../src/7kyu/29-categorize_new_member/openOrSenior');
 
 
 
@@ -311,6 +312,15 @@ describe("7kyu", () => {
         it("Return the unique number of an array", () => {
             assert.strictEqual(stray([1, 1, 2]), 2);
             assert.strictEqual(stray([17, 17, 3, 17, 17, 17, 17]), 3);
+        });
+    });
+
+
+    describe("openOrSenior", () => {
+        it("Check if a user has a senior or open membership", () => {
+            assert.deepStrictEqual(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]),['Open', 'Senior', 'Open', 'Senior'])
+            assert.deepStrictEqual(openOrSenior([[3, 12],[55,1],[91, -2],[53, 23]]),['Open', 'Open', 'Open', 'Open'])
+            assert.deepStrictEqual(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]),['Senior', 'Open', 'Open', 'Open'])
         });
     });
 });
