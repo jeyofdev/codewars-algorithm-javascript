@@ -12,10 +12,26 @@ const solution = require('../src/7kyu/10-largest_5_digit_number_in_a_series/solu
 const maskify = require('../src/7kyu/11-credit_card_mask/maskify');
 const smallEnough = require('../src/7kyu/12-small_enough_beginner/smallEnough');
 const range = require('../src/7kyu/13-get_the_integers_between_two_numbers/range');
-const mergeArrays = require('../src/7kyu/14-merge-two-arrays/mergeArrays')
-const repeats = require('../src/7kyu/15-sum_of_array_singles/repeats')
-const filterString = require('../src/7kyu/16-filter_the_number/filterString')
-const splitInParts = require('../src/7kyu/17-split_in_parts/splitInParts')
+const mergeArrays = require('../src/7kyu/14-merge-two-arrays/mergeArrays');
+const repeats = require('../src/7kyu/15-sum_of_array_singles/repeats');
+const filterString = require('../src/7kyu/16-filter_the_number/filterString');
+const splitInParts = require('../src/7kyu/17-split_in_parts/splitInParts');
+const highAndLow = require('../src/7kyu/18-highest_and_owest/highAndLow');
+const descendingOrder = require('../src/7kyu/19-descending_order/descendingOrder');
+const filterList = require('../src/7kyu/20-list_filtering/filterList');
+const isIsogram = require('../src/7kyu/21-isograms/isIsogram');
+const findShort = require('../src/7kyu/22-shortest-word/findShort');
+const number = require('../src/7kyu/23-number_of_people_in_the_bus/number');
+const reverseWords = require('../src/7kyu/24-reverse_words/reverseWords');
+const oddOrEven = require('../src/7kyu/25-odd_or_even/oddOrEven');
+const stringEndsWith = require('../src/7kyu/26-string_ends_with/stringEndsWith');
+const removeSmallest = require('../src/7kyu/27-remove_the_minimum/removeSmallest');
+const stray = require('../src/7kyu/28-find_the_stray_number/stray');
+const openOrSenior = require('../src/7kyu/29-categorize_new_member/openOrSenior');
+const friend = require('../src/7kyu/30-friend_or_foe/friend');
+const sortByLength = require('../src/7kyu/31-sort_array_by_string_length/sortByLength');
+const checkExam = require('../src/7kyu/32-check_the_exam/checkExam');
+
 
 
 describe("7kyu", () => {
@@ -177,6 +193,166 @@ describe("7kyu", () => {
             assert.strictEqual(splitInParts("supercalifragilisticexpialidocious", 3), "sup erc ali fra gil ist ice xpi ali doc iou s")
             assert.strictEqual(splitInParts("HelloKata", 1), "H e l l o K a t a")
             assert.strictEqual(splitInParts("HelloKata", 9), "HelloKata")
+        });
+    });
+
+
+    describe("highAndLow", () => {
+        it("Return the highest and lowest number from a list of numbers from a string", () => {
+            assert.strictEqual(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"), "42 -9"); 
+        });
+    });
+
+
+    describe("descendingOrder", () => {
+        it("Return the digits of a number in descending order", () => {
+            assert.strictEqual(descendingOrder(0), 0)
+            assert.strictEqual(descendingOrder(1), 1)
+            assert.strictEqual(descendingOrder(111), 111)
+            assert.strictEqual(descendingOrder(15), 51)
+            assert.strictEqual(descendingOrder(1021), 2110)
+            assert.strictEqual(descendingOrder(123456789), 987654321)
+        });
+    });
+
+
+    describe("isIsogram", () => {
+        it("Check if a string contains only letters is an isogram", () => {
+            assert.strictEqual(isIsogram("Dermatoglyphics"), true );
+            assert.strictEqual(isIsogram("isogram"), true );
+            assert.strictEqual(isIsogram("aba"), false, "same chars may not be adjacent" );
+            assert.strictEqual(isIsogram("moOse"), false, "same chars may not be same case" );
+            assert.strictEqual(isIsogram("isIsogram"), false );
+            assert.strictEqual(isIsogram(""), true, "an empty string is a valid isogram" );
+        });
+    });
+
+
+    describe("findShort", () => {
+        it("Return the length of the shortest word(s)", () => {
+            assert.strictEqual(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
+            assert.strictEqual(findShort("turns out random test cases are easier than writing out basic ones"), 3); 
+            assert.strictEqual(findShort("Let's travel abroad shall we"), 2);
+        });
+    });
+
+
+    describe("number", () => {
+        it("Return the number of people who are still on the bus after the last bus station (after the last array)", () => {
+            assert.strictEqual(number([[10,0],[3,5],[5,8]]), 5);
+            assert.strictEqual(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]), 17);
+            assert.strictEqual(number([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]), 21);
+            assert.strictEqual(number([[0,0]]), 0);
+        });
+    });
+
+
+    describe("reverseWords", () => {
+        it("Return a string with every word reversed", () => {
+            assert.strictEqual(reverseWords('The quick brown fox jumps over the lazy dog.'), 'ehT kciuq nworb xof spmuj revo eht yzal .god');
+            assert.strictEqual(reverseWords('apple'), 'elppa');
+            assert.strictEqual(reverseWords('a b c d'), 'a b c d');
+            assert.strictEqual(reverseWords('double  spaced  words'), 'elbuod  decaps  sdrow');
+        });
+    });
+
+
+    describe("oddOrEven", () => {
+        it("Return if the sum of elements of an array is odd or even", () => {
+            assert.strictEqual(oddOrEven([0]), 'even');
+            assert.strictEqual(oddOrEven([1]), 'odd');
+            assert.strictEqual(oddOrEven([]), 'even');
+            assert.strictEqual(oddOrEven([0, 1, 5]), 'even');
+            assert.strictEqual(oddOrEven([0, 1, 3]), 'even');
+            assert.strictEqual(oddOrEven([1023, 1, 2]), 'even');
+            assert.strictEqual(oddOrEven([0, -1, -5]), 'even');
+            assert.strictEqual(oddOrEven([0, -1, -3]), 'even');
+            assert.strictEqual(oddOrEven([-1023, 1, -2]), 'even');
+            assert.strictEqual(oddOrEven([0, 1, 2]), 'odd');
+            assert.strictEqual(oddOrEven([0, 1, 4]), 'odd');
+            assert.strictEqual(oddOrEven([1023, 1, 3]), 'odd');
+            assert.strictEqual(oddOrEven([0, -1, 2]), 'odd');
+            assert.strictEqual(oddOrEven([0, 1, -4]), 'odd');
+            assert.strictEqual(oddOrEven([-1023, -1, 3]), 'odd');
+        });
+    });
+
+
+    describe("stringEndsWith", () => {
+        it("Check that the first argument passed ends with the 2nd argument", () => {
+            assert.strictEqual(stringEndsWith('abcde', 'cde'), true);
+            assert.strictEqual(stringEndsWith('abcde', 'abc'), false);      
+        });
+    });
+
+
+    describe("removeSmallest", () => {
+        it("Remove the smallest number from an array", () => {
+            assert.deepStrictEqual(removeSmallest([1, 2, 3, 4, 5]), [2, 3, 4, 5], "Wrong result for [1, 2, 3, 4, 5]");
+            assert.deepStrictEqual(removeSmallest([5, 3, 2, 1, 4]), [5, 3, 2, 4], "Wrong result for [5, 3, 2, 1, 4]");
+            assert.deepStrictEqual(removeSmallest([2, 2, 1, 2, 1]), [2, 2, 2, 1], "Wrong result for [2, 2, 1, 2, 1]");
+            assert.deepStrictEqual(removeSmallest([]), [], "Wrong result for []");
+
+            for (let i = 0; i < 10; ++i) {
+                let x = ~~(Math.random() * 400);
+                assert.deepStrictEqual(removeSmallest([x]), [], `Wrong result for ${[x]}`);
+            }
+
+            function randomArray(length) {
+                return Array.from({length: length}, () => ~~(Math.random() * 400));
+            }
+
+            for(let i = 0; i < 10; ++i) {
+                let arr = randomArray(~~(Math.random() * 10) + 1);
+                let l = arr.length;
+                assert.deepStrictEqual(removeSmallest(arr).length, l - 1, `Wrong result for ${arr}`);
+            }
+        });
+    });
+
+
+    describe("stray", () => {
+        it("Return the unique number of an array", () => {
+            assert.strictEqual(stray([1, 1, 2]), 2);
+            assert.strictEqual(stray([17, 17, 3, 17, 17, 17, 17]), 3);
+        });
+    });
+
+
+    describe("openOrSenior", () => {
+        it("Check if a user has a senior or open membership", () => {
+            assert.deepStrictEqual(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]),['Open', 'Senior', 'Open', 'Senior']);
+            assert.deepStrictEqual(openOrSenior([[3, 12],[55,1],[91, -2],[53, 23]]),['Open', 'Open', 'Open', 'Open']);
+            assert.deepStrictEqual(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]),['Senior', 'Open', 'Open', 'Open']);
+        });
+    });
+
+
+    describe("friend", () => {
+        it("Filter an array of strings and return a list containing only the name of your friends", () => {
+            assert.deepStrictEqual(friend(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"]);
+            assert.deepStrictEqual(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"]), ["Ryan"]);
+            assert.deepStrictEqual(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]), ["Jimm", "Cari", "aret"]);
+            assert.deepStrictEqual(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"]);
+        });
+    });
+
+
+    describe("sortByLength", () => {
+        it("Return a sorted array containing the ordered strings by the number of characters", () => {
+            assert.deepStrictEqual(sortByLength(["Beg", "Life", "I", "To"]),["I", "To", "Beg", "Life"]);
+            assert.deepStrictEqual(sortByLength(["", "Moderately", "Brains", "Pizza"]),["", "Pizza", "Brains", "Moderately"]);
+            assert.deepStrictEqual(sortByLength(["Longer", "Longest", "Short"]),["Short", "Longer", "Longest"]);
+        });
+    });
+
+
+    describe("checkExam", () => {
+        it("Return the student's score by comparing their answers with the correct answers", () => {
+            assert.strictEqual(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]), 6);
+            assert.strictEqual(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]), 7);
+            assert.strictEqual(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]), 16);
+            assert.strictEqual(checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]), 0);
         });
     });
 });
