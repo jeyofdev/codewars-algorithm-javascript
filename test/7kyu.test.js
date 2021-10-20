@@ -30,6 +30,7 @@ const stray = require('../src/7kyu/28-find_the_stray_number/stray');
 const openOrSenior = require('../src/7kyu/29-categorize_new_member/openOrSenior');
 const friend = require('../src/7kyu/30-friend_or_foe/friend');
 const sortByLength = require('../src/7kyu/31-sort_array_by_string_length/sortByLength');
+const checkExam = require('../src/7kyu/32-check_the_exam/checkExam');
 
 
 
@@ -342,6 +343,16 @@ describe("7kyu", () => {
             assert.deepStrictEqual(sortByLength(["Beg", "Life", "I", "To"]),["I", "To", "Beg", "Life"]);
             assert.deepStrictEqual(sortByLength(["", "Moderately", "Brains", "Pizza"]),["", "Pizza", "Brains", "Moderately"]);
             assert.deepStrictEqual(sortByLength(["Longer", "Longest", "Short"]),["Short", "Longer", "Longest"]);
+        });
+    });
+
+
+    describe("checkExam", () => {
+        it("Return the student's score by comparing their answers with the correct answers", () => {
+            assert.strictEqual(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]), 6);
+            assert.strictEqual(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]), 7);
+            assert.strictEqual(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]), 16);
+            assert.strictEqual(checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]), 0);
         });
     });
 });
