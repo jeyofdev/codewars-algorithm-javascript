@@ -28,6 +28,7 @@ const stringEndsWith = require('../src/7kyu/26-string_ends_with/stringEndsWith')
 const removeSmallest = require('../src/7kyu/27-remove_the_minimum/removeSmallest');
 const stray = require('../src/7kyu/28-find_the_stray_number/stray');
 const openOrSenior = require('../src/7kyu/29-categorize_new_member/openOrSenior');
+const friend = require('../src/7kyu/30-friend_or_foe/friend');
 
 
 
@@ -318,9 +319,19 @@ describe("7kyu", () => {
 
     describe("openOrSenior", () => {
         it("Check if a user has a senior or open membership", () => {
-            assert.deepStrictEqual(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]),['Open', 'Senior', 'Open', 'Senior'])
-            assert.deepStrictEqual(openOrSenior([[3, 12],[55,1],[91, -2],[53, 23]]),['Open', 'Open', 'Open', 'Open'])
-            assert.deepStrictEqual(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]),['Senior', 'Open', 'Open', 'Open'])
+            assert.deepStrictEqual(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]),['Open', 'Senior', 'Open', 'Senior']);
+            assert.deepStrictEqual(openOrSenior([[3, 12],[55,1],[91, -2],[53, 23]]),['Open', 'Open', 'Open', 'Open']);
+            assert.deepStrictEqual(openOrSenior([[59, 12],[55,-1],[12, -2],[12, 12]]),['Senior', 'Open', 'Open', 'Open']);
+        });
+    });
+
+
+    describe("friend", () => {
+        it("Filter an array of strings and return a list containing only the name of your friends", () => {
+            assert.deepStrictEqual(friend(["Ryan", "Kieran", "Mark"]), ["Ryan", "Mark"]);
+            assert.deepStrictEqual(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"]), ["Ryan"]);
+            assert.deepStrictEqual(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]), ["Jimm", "Cari", "aret"]);
+            assert.deepStrictEqual(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"]);
         });
     });
 });
