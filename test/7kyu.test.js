@@ -29,6 +29,7 @@ const removeSmallest = require('../src/7kyu/27-remove_the_minimum/removeSmallest
 const stray = require('../src/7kyu/28-find_the_stray_number/stray');
 const openOrSenior = require('../src/7kyu/29-categorize_new_member/openOrSenior');
 const friend = require('../src/7kyu/30-friend_or_foe/friend');
+const sortByLength = require('../src/7kyu/31-sort_array_by_string_length/sortByLength');
 
 
 
@@ -332,6 +333,15 @@ describe("7kyu", () => {
             assert.deepStrictEqual(friend(["Ryan", "Jimmy", "123", "4", "Cool Man"]), ["Ryan"]);
             assert.deepStrictEqual(friend(["Jimm", "Cari", "aret", "truehdnviegkwgvke", "sixtyiscooooool"]), ["Jimm", "Cari", "aret"]);
             assert.deepStrictEqual(friend(["Love", "Your", "Face", "1"]), ["Love", "Your", "Face"]);
+        });
+    });
+
+
+    describe("sortByLength", () => {
+        it("Return a sorted array containing the ordered strings by the number of characters", () => {
+            assert.deepStrictEqual(sortByLength(["Beg", "Life", "I", "To"]),["I", "To", "Beg", "Life"]);
+            assert.deepStrictEqual(sortByLength(["", "Moderately", "Brains", "Pizza"]),["", "Pizza", "Brains", "Moderately"]);
+            assert.deepStrictEqual(sortByLength(["Longer", "Longest", "Short"]),["Short", "Longer", "Longest"]);
         });
     });
 });
