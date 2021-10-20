@@ -21,6 +21,7 @@ const descendingOrder = require('../src/7kyu/19-descending_order/descendingOrder
 const filterList = require('../src/7kyu/20-list_filtering/filterList');
 const isIsogram = require('../src/7kyu/21-isograms/isIsogram');
 const findShort = require('../src/7kyu/22-shortest-word/findShort');
+const number = require('../src/7kyu/23-number_of_people_in_the_bus/number');
 
 
 
@@ -223,6 +224,16 @@ describe("7kyu", () => {
             assert.strictEqual(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
             assert.strictEqual(findShort("turns out random test cases are easier than writing out basic ones"), 3); 
             assert.strictEqual(findShort("Let's travel abroad shall we"), 2);
+        });
+    });
+
+
+    describe("number", () => {
+        it("Return the number of people who are still on the bus after the last bus station (after the last array)", () => {
+            assert.strictEqual(number([[10,0],[3,5],[5,8]]), 5);
+            assert.strictEqual(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]), 17);
+            assert.strictEqual(number([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]), 21);
+            assert.strictEqual(number([[0,0]]), 0);
         });
     });
 });
