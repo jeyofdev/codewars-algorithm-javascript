@@ -32,6 +32,7 @@ const shortenToDate = require('../src/8kyu/30-remove_the_time/shortenToDate');
 const isToday = require('../src/8kyu/31-is_the_date_today/isToday');
 const squareSum = require('../src/8kyu/32-square_sum/squareSum');
 const countBy = require('../src/8kyu/33-count_by_x/countBy');
+const points = require('../src/8kyu/34-total_amout_of_points/points');
 
 
 describe('8kyu', () => {
@@ -365,8 +366,19 @@ describe('8kyu', () => {
 
     describe('countBy', () => {
         it('Return an array of the first (n) multiples of (x)', () => {
-            assert.deepEqual(countBy(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-            assert.deepEqual(countBy(2, 5), [2, 4, 6, 8, 10])
+            assert.deepEqual(countBy(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+            assert.deepEqual(countBy(2, 5), [2, 4, 6, 8, 10]);
+        });
+    });
+
+
+    describe('points', () => {
+        it('Returns the total number of points based on the results', () => {
+            assert.strictEqual(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]) , 30);
+            assert.strictEqual(points(["1:1","2:2","3:3","4:4","2:2","3:3","4:4","3:3","4:4","4:4"]) , 10);
+            assert.strictEqual(points(["0:1","0:2","0:3","0:4","1:2","1:3","1:4","2:3","2:4","3:4"]) , 0);
+            assert.strictEqual(points(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]) , 15);
+            assert.strictEqual(points(["1:0","2:0","3:0","4:4","2:2","3:3","1:4","2:3","2:4","3:4"]) , 12);
         });
     });
 });

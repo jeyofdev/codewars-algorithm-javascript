@@ -1,7 +1,8 @@
 /**
  * Return an array of the first (n) multiples of (x)
  *
- * @param {array} numbers
+ * @param {number} x
+ * @param {number} n
  */
 const countBy = (x, n) => {
     let z = [];
