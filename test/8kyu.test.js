@@ -34,6 +34,7 @@ const squareSum = require('../src/8kyu/32-square_sum/squareSum');
 const countBy = require('../src/8kyu/33-count_by_x/countBy');
 const points = require('../src/8kyu/34-total_amout_of_points/points');
 const grow = require('../src/8kyu/35-beginner_reduce-but-grow/grow');
+const sumMix = require('../src/8kyu/36-sum-mixed-array/sumMix');
 
 
 describe('8kyu', () => {
@@ -389,6 +390,15 @@ describe('8kyu', () => {
             assert.strictEqual(grow([1, 2, 3]), 6);
             assert.strictEqual(grow([4, 1, 1, 1, 4]), 16); 
             assert.strictEqual(grow([2, 2, 2, 2, 2, 2]), 64); 
+        });
+    });
+
+
+    describe('sumMix', () => {
+        it('Return the sum of the values in the array as if all were numbers', () => {
+            assert.strictEqual(sumMix([9, 3, '7', '3']), 22);
+            assert.strictEqual(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42); 
+            assert.strictEqual(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']), 41); 
         });
     });
 });
