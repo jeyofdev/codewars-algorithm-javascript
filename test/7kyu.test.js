@@ -31,6 +31,7 @@ const openOrSenior = require('../src/7kyu/29-categorize_new_member/openOrSenior'
 const friend = require('../src/7kyu/30-friend_or_foe/friend');
 const sortByLength = require('../src/7kyu/31-sort_array_by_string_length/sortByLength');
 const checkExam = require('../src/7kyu/32-check_the_exam/checkExam');
+const isSortedAndHow = require('../src/7kyu/33-sorted_yes_no_how/isSortedAndHow');
 
 
 
@@ -353,6 +354,15 @@ describe("7kyu", () => {
             assert.strictEqual(checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]), 7);
             assert.strictEqual(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]), 16);
             assert.strictEqual(checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]), 0);
+        });
+    });
+
+
+    describe("isSortedAndHow", () => {
+        it("Return if the elements of an array are sorted", () => {
+            assert.strictEqual(isSortedAndHow([1, 2]), 'yes, ascending');
+            assert.strictEqual(isSortedAndHow([15, 7, 3, -8]), 'yes, descending');
+            assert.strictEqual(isSortedAndHow([4, 2, 30]), 'no');
         });
     });
 });
