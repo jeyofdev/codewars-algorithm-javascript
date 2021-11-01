@@ -29,6 +29,7 @@ const isDivisible = require('../src/8kyu/27-Is_n_divisible_by_x_and_y/isDivisibl
 const digitize = require('../src/8kyu/28-convert_number_to_reversed_array_of_digits/digitize');
 const abbrevName = require('../src/8kyu/29-abbreviate_a_two_word_name/abbrevName');
 const shortenToDate = require('../src/8kyu/30-remove_the_time/shortenToDate');
+const isToday = require('../src/8kyu/31-is_the_date_today/isToday');
 
 
 describe('8kyu', () => {
@@ -333,6 +334,21 @@ describe('8kyu', () => {
             assert.strictEqual(shortenToDate("Friday May 2, 9am"), "Friday May 2");
             assert.strictEqual(shortenToDate("Tuesday January 29, 10pm"), "Tuesday January 29");
             assert.strictEqual(shortenToDate("Monday December 25, 10pm"), "Monday December 25");
+        });
+    });
+
+
+    describe('isToday', () => {
+        it('Return a Boolean value indicating whether the date is today or not', () => {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+
+            assert.strictEqual(isToday(new Date()), true);
+            assert.strictEqual(isToday(tomorrow), false);
+            assert.strictEqual(isToday(yesterday), false);
         });
     });
 });
