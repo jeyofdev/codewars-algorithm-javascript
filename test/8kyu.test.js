@@ -31,6 +31,7 @@ const abbrevName = require('../src/8kyu/29-abbreviate_a_two_word_name/abbrevName
 const shortenToDate = require('../src/8kyu/30-remove_the_time/shortenToDate');
 const isToday = require('../src/8kyu/31-is_the_date_today/isToday');
 const squareSum = require('../src/8kyu/32-square_sum/squareSum');
+const countBy = require('../src/8kyu/33-count_by_x/countBy');
 
 
 describe('8kyu', () => {
@@ -358,6 +359,14 @@ describe('8kyu', () => {
         it('Return the sum of each square of a number', () => {
             assert.strictEqual(squareSum([1, 2]), 5);
             assert.strictEqual(squareSum([0, 3, 4, 5]), 50);
+        });
+    });
+
+
+    describe('countBy', () => {
+        it('Return an array of the first (n) multiples of (x)', () => {
+            assert.deepEqual(countBy(1, 10), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+            assert.deepEqual(countBy(2, 5), [2, 4, 6, 8, 10])
         });
     });
 });
