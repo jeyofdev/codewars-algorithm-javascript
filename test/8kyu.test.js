@@ -30,6 +30,7 @@ const digitize = require('../src/8kyu/28-convert_number_to_reversed_array_of_dig
 const abbrevName = require('../src/8kyu/29-abbreviate_a_two_word_name/abbrevName');
 const shortenToDate = require('../src/8kyu/30-remove_the_time/shortenToDate');
 const isToday = require('../src/8kyu/31-is_the_date_today/isToday');
+const squareSum = require('../src/8kyu/32-square_sum/squareSum');
 
 
 describe('8kyu', () => {
@@ -349,6 +350,14 @@ describe('8kyu', () => {
             assert.strictEqual(isToday(new Date()), true);
             assert.strictEqual(isToday(tomorrow), false);
             assert.strictEqual(isToday(yesterday), false);
+        });
+    });
+
+
+    describe('squareSum', () => {
+        it('Return the sum of each square of a number', () => {
+            assert.strictEqual(squareSum([1, 2]), 5);
+            assert.strictEqual(squareSum([0, 3, 4, 5]), 50);
         });
     });
 });
