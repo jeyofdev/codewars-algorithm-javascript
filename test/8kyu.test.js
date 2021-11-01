@@ -33,8 +33,9 @@ const isToday = require('../src/8kyu/31-is_the_date_today/isToday');
 const squareSum = require('../src/8kyu/32-square_sum/squareSum');
 const countBy = require('../src/8kyu/33-count_by_x/countBy');
 const points = require('../src/8kyu/34-total_amout_of_points/points');
-const grow = require('../src/8kyu/35-beginner_reduce-but-grow/grow');
-const sumMix = require('../src/8kyu/36-sum-mixed-array/sumMix');
+const grow = require('../src/8kyu/35-beginner_reduce_but_grow/grow');
+const sumMix = require('../src/8kyu/36-sum_mixed_array/sumMix');
+const fakeBin = require('../src/8kyu/37-fake_binary/fakeBin');
 
 
 describe('8kyu', () => {
@@ -399,6 +400,15 @@ describe('8kyu', () => {
             assert.strictEqual(sumMix([9, 3, '7', '3']), 22);
             assert.strictEqual(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42); 
             assert.strictEqual(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']), 41); 
+        });
+    });
+
+
+    describe('fakeBin', () => {
+        it('Replace any number less than 5 by 0 and any number 5 and higher by 1', () => {
+            assert.strictEqual(fakeBin('45385593107843568'), '01011110001100111');
+            assert.strictEqual(fakeBin('509321967506747'), '101000111101101'); 
+            assert.strictEqual(fakeBin('366058562030849490134388085'), '011011110000101010000011011');
         });
     });
 });
