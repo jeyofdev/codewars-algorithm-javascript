@@ -33,6 +33,7 @@ const sortByLength = require('../src/7kyu/31-sort_array_by_string_length/sortByL
 const checkExam = require('../src/7kyu/32-check_the_exam/checkExam');
 const isSortedAndHow = require('../src/7kyu/33-sorted_yes_no_how/isSortedAndHow');
 const myLanguages = require('../src/7kyu/34-my_languages/myLanguages');
+const sumEvenNumbers = require('../src/7kyu/35-sum_even_numbers/sumEvenNumbers');
 
 
 
@@ -373,6 +374,13 @@ describe("7kyu", () => {
             assert.deepStrictEqual(myLanguages({"Java" : 10, "Ruby" : 80, "Python" : 65}), ["Ruby", "Python"]);
             assert.deepStrictEqual(myLanguages({"Hindi" : 60, "Greek" : 71, "Dutch" : 93}), ["Dutch", "Greek", "Hindi"]);
             assert.deepStrictEqual(myLanguages({"C++" : 50, "ASM" : 10, "Haskell" : 20}), []);
+        });
+    });
+
+
+    describe("sumEvenNumbers", () => {
+        it("Return sum of even values", () => {
+            assert.strictEqual(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 30);
         });
     });
 });
