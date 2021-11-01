@@ -28,6 +28,7 @@ const countSheeps = require('../src/8kyu/26-counting_sheep/countSheeps');
 const isDivisible = require('../src/8kyu/27-Is_n_divisible_by_x_and_y/isDivisible');
 const digitize = require('../src/8kyu/28-convert_number_to_reversed_array_of_digits/digitize');
 const abbrevName = require('../src/8kyu/29-abbreviate_a_two_word_name/abbrevName');
+const shortenToDate = require('../src/8kyu/30-remove_the_time/shortenToDate');
 
 
 describe('8kyu', () => {
@@ -323,6 +324,15 @@ describe('8kyu', () => {
             assert.strictEqual(abbrevName("Evan Cole"), "E.C");
             assert.strictEqual(abbrevName("P Favuzzi"), "P.F");
             assert.strictEqual(abbrevName("David Mendieta"), "D.M");
+        });
+    });
+
+
+    describe('shortenToDate', () => {
+        it('Return a date in abbreviated format', () => {
+            assert.strictEqual(shortenToDate("Friday May 2, 9am"), "Friday May 2");
+            assert.strictEqual(shortenToDate("Tuesday January 29, 10pm"), "Tuesday January 29");
+            assert.strictEqual(shortenToDate("Monday December 25, 10pm"), "Monday December 25");
         });
     });
 });
