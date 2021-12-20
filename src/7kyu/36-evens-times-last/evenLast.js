@@ -1,7 +1,7 @@
 /**
  * Returns the sum of all integers with an even subscript, multiplied by the integer of the last subscript
  *
- * @param {array} input
+ * @param {numbers} numbers
  */
 const evenLast = (numbers) => {
     if (numbers.length === 0) {
