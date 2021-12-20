@@ -34,6 +34,7 @@ const checkExam = require('../src/7kyu/32-check_the_exam/checkExam');
 const isSortedAndHow = require('../src/7kyu/33-sorted_yes_no_how/isSortedAndHow');
 const myLanguages = require('../src/7kyu/34-my_languages/myLanguages');
 const sumEvenNumbers = require('../src/7kyu/35-sum_even_numbers/sumEvenNumbers');
+const evenLast = require('../src/7kyu/36-evens-times-last/evenLast');
 
 
 
@@ -381,6 +382,13 @@ describe("7kyu", () => {
     describe("sumEvenNumbers", () => {
         it("Return sum of even values", () => {
             assert.strictEqual(sumEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 30);
+        });
+    });
+
+
+    describe("evenLast", () => {
+        it("Returns the sum of all integers with an even subscript, multiplied by the integer of the last subscript", () => {
+            assert.strictEqual(evenLast([2, 3, 4, 5]), 30);
         });
     });
 });
