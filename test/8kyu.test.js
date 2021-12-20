@@ -36,6 +36,7 @@ const points = require('../src/8kyu/34-total_amout_of_points/points');
 const grow = require('../src/8kyu/35-beginner_reduce_but_grow/grow');
 const sumMix = require('../src/8kyu/36-sum_mixed_array/sumMix');
 const fakeBin = require('../src/8kyu/37-fake_binary/fakeBin');
+const capitalizeWord = require('../src/8kyu/38-capitalization-and-mutability/capitalizeWord');
 
 
 describe('8kyu', () => {
@@ -409,6 +410,15 @@ describe('8kyu', () => {
             assert.strictEqual(fakeBin('45385593107843568'), '01011110001100111');
             assert.strictEqual(fakeBin('509321967506747'), '101000111101101'); 
             assert.strictEqual(fakeBin('366058562030849490134388085'), '011011110000101010000011011');
+        });
+    });
+
+
+    describe('capitalizeWord', () => {
+        it('Returns the first letter of a string in uppercase', () => {
+            assert.strictEqual(capitalizeWord('word'), 'Word');
+            assert.strictEqual(capitalizeWord('i'), 'I');
+            assert.strictEqual(capitalizeWord('glasswear'), 'Glasswear');
         });
     });
 });
