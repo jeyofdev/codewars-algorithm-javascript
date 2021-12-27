@@ -17,6 +17,7 @@ const likes = require('../src/6kyu/15-who_likes_it/likes');
 const arrayDiff = require('../src/6kyu/16-array_diff/arrayDiff');
 const makeSentence = require('../src/6kyu/17-simple-sentences/makeSentence');
 const countInversions = require('../src/6kyu/18-calculate-number-of-inversions-in-array/countInversions');
+const meeting = require('../src/6kyu/19-meeting/meeting');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -348,6 +349,17 @@ describe('6kyu', () => {
                 countInversions([6, 5, 4, 3, 3, 3, 3, 2, 1]),
                 30
             );
+        });
+    });
+
+    describe('meeting', () => {
+        it('Return a string uppercase sorted in alphabetical order and by last name', () => {
+            assert.strictEqual(meeting("Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn"), 
+            "(ARNO, ANN)(BELL, JOHN)(CORNWELL, ALEX)(DORNY, ABBA)(KERN, LEWIS)(KORN, ALEX)(META, GRACE)(SCHWARZ, VICTORIA)(STAN, MADISON)(STAN, MEGAN)(WAHL, ALEXIS)");
+            assert.strictEqual(meeting("John:Gates;Michael:Wahl;Megan:Bell;Paul:Dorries;James:Dorny;Lewis:Steve;Alex:Meta;Elizabeth:Russel;Anna:Korn;Ann:Kern;Amber:Cornwell"), 
+            "(BELL, MEGAN)(CORNWELL, AMBER)(DORNY, JAMES)(DORRIES, PAUL)(GATES, JOHN)(KERN, ANN)(KORN, ANNA)(META, ALEX)(RUSSEL, ELIZABETH)(STEVE, LEWIS)(WAHL, MICHAEL)");
+            assert.strictEqual(meeting("Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern"), 
+            "(ARNO, ALEX)(ARNO, HALEY)(BELL, SARAH)(CORNWELL, ALISSA)(DORNY, PAUL)(DORRIES, ANDREW)(KERN, ANN)(KERN, MADISON)");
         });
     });
 });
