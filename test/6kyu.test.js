@@ -18,6 +18,7 @@ const arrayDiff = require('../src/6kyu/16-array_diff/arrayDiff');
 const makeSentence = require('../src/6kyu/17-simple-sentences/makeSentence');
 const countInversions = require('../src/6kyu/18-calculate-number-of-inversions-in-array/countInversions');
 const meeting = require('../src/6kyu/19-meeting/meeting');
+const dataReverse = require('../src/6kyu/20-data-reverse/dataReverse');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -42,6 +43,7 @@ describe('6kyu', () => {
         });
     });
 
+
     describe('duplicateEncode', () => {
         it('Convert each character of a character string into an opening or closing parenthesis', () => {
             assert.strictEqual(duplicateEncode('din'), '(((');
@@ -54,6 +56,7 @@ describe('6kyu', () => {
             assert.strictEqual(duplicateEncode('(( @'), '))((');
         });
     });
+
 
     describe('toCamelCase', () => {
         it('Convert string to camel case', () => {
@@ -97,6 +100,7 @@ describe('6kyu', () => {
         });
     });
 
+
     describe('comp', () => {
         it('Checks if the two arrays have the same elements, with the same multiplicities', () => {
             arrA = [121, 144, 19, 161, 19, 144, 19, 11];
@@ -113,6 +117,7 @@ describe('6kyu', () => {
             assert.strictEqual(comp(arrA, arrB), true);
         });
     });
+
 
     describe('longestConsec', () => {
         it('Return the first longest string consisting of k consecutive strings taken in an array', () => {
@@ -186,6 +191,7 @@ describe('6kyu', () => {
         });
     });
 
+
     describe('inArray', () => {
         it('Return an array sorted r in lexicographical order arrA whose strings are substrings of strings of arrB.', () => {
             a2 = ['lively', 'alive', 'harp', 'sharp', 'armstrong'];
@@ -203,6 +209,7 @@ describe('6kyu', () => {
         });
     });
 
+
     describe('digPow', () => {
         it('Return a positive integer k, if it exists, such that the sum of the digits of n taken to successive powers of p is equal to k * n.', () => {
             assert.strictEqual(digPow(89, 1), 1);
@@ -210,6 +217,7 @@ describe('6kyu', () => {
             assert.strictEqual(digPow(46288, 3), 51);
         });
     });
+
 
     describe('sqInRect', () => {
         it("Return an array with the size of each of the squares of a 'true' rectangle", () => {
@@ -219,6 +227,7 @@ describe('6kyu', () => {
             assert.deepStrictEqual(sqInRect(20, 14), [14, 6, 6, 2, 2, 2]);
         });
     });
+
 
     describe('findNb', () => {
         it('Return the total number of cubes based on the total volume', () => {
@@ -230,6 +239,7 @@ describe('6kyu', () => {
             assert.strictEqual(findNb(91716553919377), -1);
         });
     });
+
 
     describe('createPhoneNumber', () => {
         it('Return a number array in the form of a phone number', () => {
@@ -247,6 +257,7 @@ describe('6kyu', () => {
             );
         });
     });
+
 
     describe('isValidWalk', () => {
         it('Function that returns true if the walk takes exactly ten minutes', () => {
@@ -279,12 +290,14 @@ describe('6kyu', () => {
         });
     });
 
+
     describe('digitalRoot', () => {
         it('Return the numeric root of all digits in a number', () => {
             assert.strictEqual(digitalRoot(16), 7);
             assert.strictEqual(digitalRoot(456), 6);
         });
     });
+
 
     describe('likes', () => {
         it('Return the first names of an array as a string', () => {
@@ -304,6 +317,7 @@ describe('6kyu', () => {
             );
         });
     });
+
 
     describe('arrayDiff', () => {
         it('Remove all the values from an array a that are present in an array b, keeping their order', () => {
@@ -330,6 +344,7 @@ describe('6kyu', () => {
         });
     });
 
+
     describe('makeSentence', () => {
         it('Return a sentence out of the given parts', () => {
             assert.strictEqual(
@@ -338,6 +353,7 @@ describe('6kyu', () => {
             );
         });
     });
+
 
     describe('countInversions', () => {
         it('Return The number of inversions that are pairs of elements in the array that are out of order', () => {
@@ -352,6 +368,7 @@ describe('6kyu', () => {
         });
     });
 
+
     describe('meeting', () => {
         it('Return a string uppercase sorted in alphabetical order and by last name', () => {
             assert.strictEqual(meeting("Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn"), 
@@ -360,6 +377,15 @@ describe('6kyu', () => {
             "(BELL, MEGAN)(CORNWELL, AMBER)(DORNY, JAMES)(DORRIES, PAUL)(GATES, JOHN)(KERN, ANN)(KORN, ANNA)(META, ALEX)(RUSSEL, ELIZABETH)(STEVE, LEWIS)(WAHL, MICHAEL)");
             assert.strictEqual(meeting("Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern"), 
             "(ARNO, ALEX)(ARNO, HALEY)(BELL, SARAH)(CORNWELL, ALISSA)(DORNY, PAUL)(DORRIES, ANDREW)(KERN, ANN)(KERN, MADISON)");
+        });
+    });
+
+
+    describe('dataReverse', () => {
+        it('Return a reverse data stream', () => {
+            assert.deepStrictEqual(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]),
+            [1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]);
+            assert.deepStrictEqual(dataReverse([0,0,1,1,0,1,1,0,0,0,1,0,1,0,0,1]), [0,0,1,0,1,0,0,1,0,0,1,1,0,1,1,0]);
         });
     });
 });
