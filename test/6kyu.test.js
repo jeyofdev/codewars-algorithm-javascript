@@ -20,6 +20,7 @@ const countInversions = require('../src/6kyu/18-calculate-number-of-inversions-i
 const meeting = require('../src/6kyu/19-meeting/meeting');
 const dataReverse = require('../src/6kyu/20-data-reverse/dataReverse');
 const partsSums = require('../src/6kyu/21-sums-of-parts/partsSums');
+const fibonacci = require('../src/6kyu/22-even-fibonacci-sum/fibonacci');
 
 
 describe('6kyu', () => {
@@ -399,6 +400,22 @@ describe('6kyu', () => {
             assert.deepStrictEqual(partsSums([1, 2, 3, 4, 5, 6]), [21, 20, 18, 15, 11, 6, 0]);
             assert.deepStrictEqual(partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358]), 
             [10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0]);
+        });
+    });
+
+
+    describe('fibonacci', () => {
+        it('Return the sum of all even numbers in the Fibonacci sequence that are less than the given number', () => {
+            assert.strictEqual(fibonacci(2147483647), 1485607536);
+            assert.strictEqual(fibonacci(1000000000), 350704366);
+            assert.strictEqual(fibonacci(100000000), 82790070);
+            assert.strictEqual(fibonacci(1000000), 1089154);
+            assert.strictEqual(fibonacci(1000), 798);
+            assert.strictEqual(fibonacci(100), 44);
+            assert.strictEqual(fibonacci(5), 2);
+            assert.strictEqual(fibonacci(8), 2);
+            assert.strictEqual(fibonacci(10), 10);
+            assert.strictEqual(fibonacci(1), 0);
         });
     });
 });
