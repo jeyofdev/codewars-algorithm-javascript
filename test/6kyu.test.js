@@ -19,6 +19,8 @@ const makeSentence = require('../src/6kyu/17-simple-sentences/makeSentence');
 const countInversions = require('../src/6kyu/18-calculate-number-of-inversions-in-array/countInversions');
 const meeting = require('../src/6kyu/19-meeting/meeting');
 const dataReverse = require('../src/6kyu/20-data-reverse/dataReverse');
+const partsSums = require('../src/6kyu/21-sums-of-parts/partsSums');
+
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -386,6 +388,17 @@ describe('6kyu', () => {
             assert.deepStrictEqual(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]),
             [1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]);
             assert.deepStrictEqual(dataReverse([0,0,1,1,0,1,1,0,0,0,1,0,1,0,0,1]), [0,0,1,0,1,0,0,1,0,0,1,1,0,1,1,0]);
+        });
+    });
+
+
+    describe('partsSums', () => {
+        it('Return the sums of the parts of an array', () => {
+            assert.deepStrictEqual(partsSums([]), [0]);
+            assert.deepStrictEqual(partsSums([0, 1, 3, 6, 10]), [20, 20, 19, 16, 10, 0]);
+            assert.deepStrictEqual(partsSums([1, 2, 3, 4, 5, 6]), [21, 20, 18, 15, 11, 6, 0]);
+            assert.deepStrictEqual(partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358]), 
+            [10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0]);
         });
     });
 });
