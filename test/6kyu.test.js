@@ -24,6 +24,7 @@ const fibonacci = require('../src/6kyu/22-even-fibonacci-sum/fibonacci');
 const solve = require('../src/6kyu/23-simple-sum-of-pairs/solve');
 const duplicateCount = require('../src/6kyu/24-counting-duplicates/duplicateCount');
 const order = require('../src/6kyu/25-your-order-please/order');
+const findMissingLetter = require('../src/6kyu/26-find-the-missing-letter/findMissingLetter');
 
 
 describe('6kyu', () => {
@@ -451,6 +452,14 @@ describe('6kyu', () => {
             assert.strictEqual(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est")
             assert.strictEqual(order("4of Fo1r pe6ople g3ood th5e the2"), "Fo1r the2 g3ood 4of th5e pe6ople")
             assert.strictEqual(order(""), "", "empty input should return empty string" )
+        });
+    });
+
+
+    describe('findMissingLetter', () => {
+        it('Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array', () => {
+            assert.strictEqual(findMissingLetter(['a','b','c','d','f']), 'e');
+            assert.strictEqual(findMissingLetter(['O','Q','R','S']), 'P');
         });
     });
 });
