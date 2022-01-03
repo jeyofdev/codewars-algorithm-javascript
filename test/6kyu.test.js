@@ -21,6 +21,7 @@ const meeting = require('../src/6kyu/19-meeting/meeting');
 const dataReverse = require('../src/6kyu/20-data-reverse/dataReverse');
 const partsSums = require('../src/6kyu/21-sums-of-parts/partsSums');
 const fibonacci = require('../src/6kyu/22-even-fibonacci-sum/fibonacci');
+const solve = require('../src/6kyu/23-simple-sum-of-pairs/solve');
 
 
 describe('6kyu', () => {
@@ -416,6 +417,17 @@ describe('6kyu', () => {
             assert.strictEqual(fibonacci(8), 2);
             assert.strictEqual(fibonacci(10), 10);
             assert.strictEqual(fibonacci(1), 0);
+        });
+    });
+
+
+    describe('solve', () => {
+        it('Return the digitSum(a) + digitsum(b)', () => {
+            assert.strictEqual(solve(18), 18);
+            assert.strictEqual(solve(29), 11);
+            assert.strictEqual(solve(45), 18);
+            assert.strictEqual(solve(1140), 33);
+            assert.strictEqual(solve(7019), 35);
         });
     });
 });
