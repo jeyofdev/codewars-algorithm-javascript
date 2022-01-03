@@ -22,6 +22,7 @@ const dataReverse = require('../src/6kyu/20-data-reverse/dataReverse');
 const partsSums = require('../src/6kyu/21-sums-of-parts/partsSums');
 const fibonacci = require('../src/6kyu/22-even-fibonacci-sum/fibonacci');
 const solve = require('../src/6kyu/23-simple-sum-of-pairs/solve');
+const duplicateCount = require('../src/6kyu/24-counting-duplicates/duplicateCount');
 
 
 describe('6kyu', () => {
@@ -428,6 +429,18 @@ describe('6kyu', () => {
             assert.strictEqual(solve(45), 18);
             assert.strictEqual(solve(1140), 33);
             assert.strictEqual(solve(7019), 35);
+        });
+    });
+
+
+    describe('duplicateCount', () => {
+        it('Return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string', () => {
+            assert.strictEqual(duplicateCount(""), 0);
+            assert.strictEqual(duplicateCount("abcde"), 0);
+            assert.strictEqual(duplicateCount("aabbcde"), 2);
+            assert.strictEqual(duplicateCount("aabBcde"), 2);
+            assert.strictEqual(duplicateCount("Indivisibility"), 1)
+            assert.strictEqual(duplicateCount("Indivisibilities"), 2)
         });
     });
 });

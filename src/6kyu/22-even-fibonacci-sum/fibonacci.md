@@ -8,7 +8,7 @@ The Fibonacci sequence is a series of numbers where the next value is the additi
 0 1 1 2 3 5 8 13 21...
 ```
 
-For example:
+## example:
 
 ```bash
 fibonacci(0)==0

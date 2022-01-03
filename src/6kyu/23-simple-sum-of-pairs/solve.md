@@ -10,7 +10,7 @@ C) DigitSum(a) + Digitsum(b) is maximum of all possibilities.
 
 You will return the digitSum(a) + digitsum(b).
 
-For example:
+## example:
 
 ```bash
 solve(29) = 11. If we take 15 + 14 = 29 and digitSum = 1 + 5 + 1 + 4 = 11. There is no larger outcome.
