@@ -23,6 +23,7 @@ const partsSums = require('../src/6kyu/21-sums-of-parts/partsSums');
 const fibonacci = require('../src/6kyu/22-even-fibonacci-sum/fibonacci');
 const solve = require('../src/6kyu/23-simple-sum-of-pairs/solve');
 const duplicateCount = require('../src/6kyu/24-counting-duplicates/duplicateCount');
+const order = require('../src/6kyu/25-your-order-please/order');
 
 
 describe('6kyu', () => {
@@ -441,6 +442,15 @@ describe('6kyu', () => {
             assert.strictEqual(duplicateCount("aabBcde"), 2);
             assert.strictEqual(duplicateCount("Indivisibility"), 1)
             assert.strictEqual(duplicateCount("Indivisibilities"), 2)
+        });
+    });
+
+
+    describe('order', () => {
+        it('Sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.', () => {
+            assert.strictEqual(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est")
+            assert.strictEqual(order("4of Fo1r pe6ople g3ood th5e the2"), "Fo1r the2 g3ood 4of th5e pe6ople")
+            assert.strictEqual(order(""), "", "empty input should return empty string" )
         });
     });
 });
