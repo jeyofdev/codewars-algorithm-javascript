@@ -25,6 +25,7 @@ const solve = require('../src/6kyu/23-simple-sum-of-pairs/solve');
 const duplicateCount = require('../src/6kyu/24-counting-duplicates/duplicateCount');
 const order = require('../src/6kyu/25-your-order-please/order');
 const findMissingLetter = require('../src/6kyu/26-find-the-missing-letter/findMissingLetter');
+const alphabetPosition = require('../src/6kyu/27-replace-with-alphabet-position/alphabetPosition');
 
 
 describe('6kyu', () => {
@@ -460,6 +461,14 @@ describe('6kyu', () => {
         it('Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array', () => {
             assert.strictEqual(findMissingLetter(['a','b','c','d','f']), 'e');
             assert.strictEqual(findMissingLetter(['O','Q','R','S']), 'P');
+        });
+    });
+
+
+    describe('alphabetPosition', () => {
+        it('Replace every letter with its position in the alphabet', () => {
+            assert.strictEqual(alphabetPosition("The sunset sets at twelve o' clock."), "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
+            assert.strictEqual(alphabetPosition("The narwhal bacons at midnight."), "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20");
         });
     });
 });
