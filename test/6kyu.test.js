@@ -26,6 +26,7 @@ const duplicateCount = require('../src/6kyu/24-counting-duplicates/duplicateCoun
 const order = require('../src/6kyu/25-your-order-please/order');
 const findMissingLetter = require('../src/6kyu/26-find-the-missing-letter/findMissingLetter');
 const alphabetPosition = require('../src/6kyu/27-replace-with-alphabet-position/alphabetPosition');
+const uniqueInOrder = require('../src/6kyu/28-unique-in-order/uniqueInOrder');
 
 
 describe('6kyu', () => {
@@ -469,6 +470,14 @@ describe('6kyu', () => {
         it('Replace every letter with its position in the alphabet', () => {
             assert.strictEqual(alphabetPosition("The sunset sets at twelve o' clock."), "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
             assert.strictEqual(alphabetPosition("The narwhal bacons at midnight."), "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20");
+        });
+    });
+
+
+    describe('uniqueInOrder', () => {
+        it('Returns a list of items without any elements with the same value next to each other and preserving the original order of elements', () => {
+            assert.deepStrictEqual(uniqueInOrder('AAAABBBCCDAABBB'), ['A','B','C','D','A','B'])
+            assert.deepStrictEqual(uniqueInOrder([1,2,2,3,3]), [1,2,3])
         });
     });
 });
