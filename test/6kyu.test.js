@@ -27,6 +27,7 @@ const order = require('../src/6kyu/25-your-order-please/order');
 const findMissingLetter = require('../src/6kyu/26-find-the-missing-letter/findMissingLetter');
 const alphabetPosition = require('../src/6kyu/27-replace-with-alphabet-position/alphabetPosition');
 const uniqueInOrder = require('../src/6kyu/28-unique-in-order/uniqueInOrder');
+const sortArray = require('../src/6kyu/29-sort-the-odd/sortArray');
 
 
 describe('6kyu', () => {
@@ -478,6 +479,15 @@ describe('6kyu', () => {
         it('Returns a list of items without any elements with the same value next to each other and preserving the original order of elements', () => {
             assert.deepStrictEqual(uniqueInOrder('AAAABBBCCDAABBB'), ['A','B','C','D','A','B'])
             assert.deepStrictEqual(uniqueInOrder([1,2,2,3,3]), [1,2,3])
+        });
+    });
+
+
+    describe('sortArray', () => {
+        it('Return the odd numbers in ascending order while leaving the even numbers at their original positions', () => {
+            assert.deepStrictEqual(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
+            assert.deepStrictEqual(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0]);
+            assert.deepStrictEqual(sortArray([]),[]);
         });
     });
 });
