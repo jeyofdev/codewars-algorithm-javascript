@@ -28,6 +28,7 @@ const findMissingLetter = require('../src/6kyu/26-find-the-missing-letter/findMi
 const alphabetPosition = require('../src/6kyu/27-replace-with-alphabet-position/alphabetPosition');
 const uniqueInOrder = require('../src/6kyu/28-unique-in-order/uniqueInOrder');
 const sortArray = require('../src/6kyu/29-sort-the-odd/sortArray');
+const multiples = require('../src/6kyu/30-multiples-of-3-or-5/multiples');
 
 
 describe('6kyu', () => {
@@ -488,6 +489,13 @@ describe('6kyu', () => {
             assert.deepStrictEqual(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
             assert.deepStrictEqual(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0]);
             assert.deepStrictEqual(sortArray([]),[]);
+        });
+    });
+
+
+    describe('multiples', () => {
+        it('Returns the sum of all the multiples of 3 or 5 below the number passed in', () => {
+            assert.strictEqual(multiples(10), 23);
         });
     });
 });
