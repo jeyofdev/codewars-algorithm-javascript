@@ -30,7 +30,7 @@ const uniqueInOrder = require('../src/6kyu/28-unique-in-order/uniqueInOrder');
 const sortArray = require('../src/6kyu/29-sort-the-odd/sortArray');
 const multiples = require('../src/6kyu/30-multiples-of-3-or-5/multiples');
 const findUniq = require('../src/6kyu/31-find-the-unique-number/findUniq');
-
+const splitString = require('../src/6kyu/32-split-strings/splitString');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -55,7 +55,6 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('duplicateEncode', () => {
         it('Convert each character of a character string into an opening or closing parenthesis', () => {
             assert.strictEqual(duplicateEncode('din'), '(((');
@@ -68,7 +67,6 @@ describe('6kyu', () => {
             assert.strictEqual(duplicateEncode('(( @'), '))((');
         });
     });
-
 
     describe('toCamelCase', () => {
         it('Convert string to camel case', () => {
@@ -112,7 +110,6 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('comp', () => {
         it('Checks if the two arrays have the same elements, with the same multiplicities', () => {
             arrA = [121, 144, 19, 161, 19, 144, 19, 11];
@@ -129,7 +126,6 @@ describe('6kyu', () => {
             assert.strictEqual(comp(arrA, arrB), true);
         });
     });
-
 
     describe('longestConsec', () => {
         it('Return the first longest string consisting of k consecutive strings taken in an array', () => {
@@ -203,7 +199,6 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('inArray', () => {
         it('Return an array sorted r in lexicographical order arrA whose strings are substrings of strings of arrB.', () => {
             a2 = ['lively', 'alive', 'harp', 'sharp', 'armstrong'];
@@ -221,7 +216,6 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('digPow', () => {
         it('Return a positive integer k, if it exists, such that the sum of the digits of n taken to successive powers of p is equal to k * n.', () => {
             assert.strictEqual(digPow(89, 1), 1);
@@ -229,7 +223,6 @@ describe('6kyu', () => {
             assert.strictEqual(digPow(46288, 3), 51);
         });
     });
-
 
     describe('sqInRect', () => {
         it("Return an array with the size of each of the squares of a 'true' rectangle", () => {
@@ -239,7 +232,6 @@ describe('6kyu', () => {
             assert.deepStrictEqual(sqInRect(20, 14), [14, 6, 6, 2, 2, 2]);
         });
     });
-
 
     describe('findNb', () => {
         it('Return the total number of cubes based on the total volume', () => {
@@ -251,7 +243,6 @@ describe('6kyu', () => {
             assert.strictEqual(findNb(91716553919377), -1);
         });
     });
-
 
     describe('createPhoneNumber', () => {
         it('Return a number array in the form of a phone number', () => {
@@ -269,7 +260,6 @@ describe('6kyu', () => {
             );
         });
     });
-
 
     describe('isValidWalk', () => {
         it('Function that returns true if the walk takes exactly ten minutes', () => {
@@ -302,14 +292,12 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('digitalRoot', () => {
         it('Return the numeric root of all digits in a number', () => {
             assert.strictEqual(digitalRoot(16), 7);
             assert.strictEqual(digitalRoot(456), 6);
         });
     });
-
 
     describe('likes', () => {
         it('Return the first names of an array as a string', () => {
@@ -329,7 +317,6 @@ describe('6kyu', () => {
             );
         });
     });
-
 
     describe('arrayDiff', () => {
         it('Remove all the values from an array a that are present in an array b, keeping their order', () => {
@@ -356,7 +343,6 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('makeSentence', () => {
         it('Return a sentence out of the given parts', () => {
             assert.strictEqual(
@@ -365,7 +351,6 @@ describe('6kyu', () => {
             );
         });
     });
-
 
     describe('countInversions', () => {
         it('Return The number of inversions that are pairs of elements in the array that are out of order', () => {
@@ -380,38 +365,71 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('meeting', () => {
         it('Return a string uppercase sorted in alphabetical order and by last name', () => {
-            assert.strictEqual(meeting("Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn"), 
-            "(ARNO, ANN)(BELL, JOHN)(CORNWELL, ALEX)(DORNY, ABBA)(KERN, LEWIS)(KORN, ALEX)(META, GRACE)(SCHWARZ, VICTORIA)(STAN, MADISON)(STAN, MEGAN)(WAHL, ALEXIS)");
-            assert.strictEqual(meeting("John:Gates;Michael:Wahl;Megan:Bell;Paul:Dorries;James:Dorny;Lewis:Steve;Alex:Meta;Elizabeth:Russel;Anna:Korn;Ann:Kern;Amber:Cornwell"), 
-            "(BELL, MEGAN)(CORNWELL, AMBER)(DORNY, JAMES)(DORRIES, PAUL)(GATES, JOHN)(KERN, ANN)(KORN, ANNA)(META, ALEX)(RUSSEL, ELIZABETH)(STEVE, LEWIS)(WAHL, MICHAEL)");
-            assert.strictEqual(meeting("Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern"), 
-            "(ARNO, ALEX)(ARNO, HALEY)(BELL, SARAH)(CORNWELL, ALISSA)(DORNY, PAUL)(DORRIES, ANDREW)(KERN, ANN)(KERN, MADISON)");
+            assert.strictEqual(
+                meeting(
+                    'Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn'
+                ),
+                '(ARNO, ANN)(BELL, JOHN)(CORNWELL, ALEX)(DORNY, ABBA)(KERN, LEWIS)(KORN, ALEX)(META, GRACE)(SCHWARZ, VICTORIA)(STAN, MADISON)(STAN, MEGAN)(WAHL, ALEXIS)'
+            );
+            assert.strictEqual(
+                meeting(
+                    'John:Gates;Michael:Wahl;Megan:Bell;Paul:Dorries;James:Dorny;Lewis:Steve;Alex:Meta;Elizabeth:Russel;Anna:Korn;Ann:Kern;Amber:Cornwell'
+                ),
+                '(BELL, MEGAN)(CORNWELL, AMBER)(DORNY, JAMES)(DORRIES, PAUL)(GATES, JOHN)(KERN, ANN)(KORN, ANNA)(META, ALEX)(RUSSEL, ELIZABETH)(STEVE, LEWIS)(WAHL, MICHAEL)'
+            );
+            assert.strictEqual(
+                meeting(
+                    'Alex:Arno;Alissa:Cornwell;Sarah:Bell;Andrew:Dorries;Ann:Kern;Haley:Arno;Paul:Dorny;Madison:Kern'
+                ),
+                '(ARNO, ALEX)(ARNO, HALEY)(BELL, SARAH)(CORNWELL, ALISSA)(DORNY, PAUL)(DORRIES, ANDREW)(KERN, ANN)(KERN, MADISON)'
+            );
         });
     });
-
 
     describe('dataReverse', () => {
         it('Return a reverse data stream', () => {
-            assert.deepStrictEqual(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]),
-            [1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]);
-            assert.deepStrictEqual(dataReverse([0,0,1,1,0,1,1,0,0,0,1,0,1,0,0,1]), [0,0,1,0,1,0,0,1,0,0,1,1,0,1,1,0]);
+            assert.deepStrictEqual(
+                dataReverse([
+                    1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0,
+                ]),
+                [
+                    1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0,
+                    0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1,
+                ]
+            );
+            assert.deepStrictEqual(
+                dataReverse([0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1]),
+                [0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0]
+            );
         });
     });
-
 
     describe('partsSums', () => {
         it('Return the sums of the parts of an array', () => {
             assert.deepStrictEqual(partsSums([]), [0]);
-            assert.deepStrictEqual(partsSums([0, 1, 3, 6, 10]), [20, 20, 19, 16, 10, 0]);
-            assert.deepStrictEqual(partsSums([1, 2, 3, 4, 5, 6]), [21, 20, 18, 15, 11, 6, 0]);
-            assert.deepStrictEqual(partsSums([744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810, 2579358]), 
-            [10037855, 9293730, 9292795, 9292388, 9291934, 9291504, 9291414, 9291270, 2581057, 2580168, 2579358, 0]);
+            assert.deepStrictEqual(
+                partsSums([0, 1, 3, 6, 10]),
+                [20, 20, 19, 16, 10, 0]
+            );
+            assert.deepStrictEqual(
+                partsSums([1, 2, 3, 4, 5, 6]),
+                [21, 20, 18, 15, 11, 6, 0]
+            );
+            assert.deepStrictEqual(
+                partsSums([
+                    744125, 935, 407, 454, 430, 90, 144, 6710213, 889, 810,
+                    2579358,
+                ]),
+                [
+                    10037855, 9293730, 9292795, 9292388, 9291934, 9291504,
+                    9291414, 9291270, 2581057, 2580168, 2579358, 0,
+                ]
+            );
         });
     });
-
 
     describe('fibonacci', () => {
         it('Return the sum of all even numbers in the Fibonacci sequence that are less than the given number', () => {
@@ -428,7 +446,6 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('solve', () => {
         it('Return the digitSum(a) + digitsum(b)', () => {
             assert.strictEqual(solve(18), 18);
@@ -439,60 +456,82 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('duplicateCount', () => {
         it('Return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string', () => {
-            assert.strictEqual(duplicateCount(""), 0);
-            assert.strictEqual(duplicateCount("abcde"), 0);
-            assert.strictEqual(duplicateCount("aabbcde"), 2);
-            assert.strictEqual(duplicateCount("aabBcde"), 2);
-            assert.strictEqual(duplicateCount("Indivisibility"), 1)
-            assert.strictEqual(duplicateCount("Indivisibilities"), 2)
+            assert.strictEqual(duplicateCount(''), 0);
+            assert.strictEqual(duplicateCount('abcde'), 0);
+            assert.strictEqual(duplicateCount('aabbcde'), 2);
+            assert.strictEqual(duplicateCount('aabBcde'), 2);
+            assert.strictEqual(duplicateCount('Indivisibility'), 1);
+            assert.strictEqual(duplicateCount('Indivisibilities'), 2);
         });
     });
-
 
     describe('order', () => {
         it('Sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.', () => {
-            assert.strictEqual(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est")
-            assert.strictEqual(order("4of Fo1r pe6ople g3ood th5e the2"), "Fo1r the2 g3ood 4of th5e pe6ople")
-            assert.strictEqual(order(""), "", "empty input should return empty string" )
+            assert.strictEqual(
+                order('is2 Thi1s T4est 3a'),
+                'Thi1s is2 3a T4est'
+            );
+            assert.strictEqual(
+                order('4of Fo1r pe6ople g3ood th5e the2'),
+                'Fo1r the2 g3ood 4of th5e pe6ople'
+            );
+            assert.strictEqual(
+                order(''),
+                '',
+                'empty input should return empty string'
+            );
         });
     });
-
 
     describe('findMissingLetter', () => {
         it('Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array', () => {
-            assert.strictEqual(findMissingLetter(['a','b','c','d','f']), 'e');
-            assert.strictEqual(findMissingLetter(['O','Q','R','S']), 'P');
+            assert.strictEqual(
+                findMissingLetter(['a', 'b', 'c', 'd', 'f']),
+                'e'
+            );
+            assert.strictEqual(findMissingLetter(['O', 'Q', 'R', 'S']), 'P');
         });
     });
-
 
     describe('alphabetPosition', () => {
         it('Replace every letter with its position in the alphabet', () => {
-            assert.strictEqual(alphabetPosition("The sunset sets at twelve o' clock."), "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
-            assert.strictEqual(alphabetPosition("The narwhal bacons at midnight."), "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20");
+            assert.strictEqual(
+                alphabetPosition("The sunset sets at twelve o' clock."),
+                '20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11'
+            );
+            assert.strictEqual(
+                alphabetPosition('The narwhal bacons at midnight.'),
+                '20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20'
+            );
         });
     });
-
 
     describe('uniqueInOrder', () => {
         it('Returns a list of items without any elements with the same value next to each other and preserving the original order of elements', () => {
-            assert.deepStrictEqual(uniqueInOrder('AAAABBBCCDAABBB'), ['A','B','C','D','A','B'])
-            assert.deepStrictEqual(uniqueInOrder([1,2,2,3,3]), [1,2,3])
+            assert.deepStrictEqual(uniqueInOrder('AAAABBBCCDAABBB'), [
+                'A',
+                'B',
+                'C',
+                'D',
+                'A',
+                'B',
+            ]);
+            assert.deepStrictEqual(uniqueInOrder([1, 2, 2, 3, 3]), [1, 2, 3]);
         });
     });
-
 
     describe('sortArray', () => {
         it('Return the odd numbers in ascending order while leaving the even numbers at their original positions', () => {
-            assert.deepStrictEqual(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
+            assert.deepStrictEqual(
+                sortArray([5, 3, 2, 8, 1, 4]),
+                [1, 3, 2, 8, 5, 4]
+            );
             assert.deepStrictEqual(sortArray([5, 3, 1, 8, 0]), [1, 3, 5, 8, 0]);
-            assert.deepStrictEqual(sortArray([]),[]);
+            assert.deepStrictEqual(sortArray([]), []);
         });
     });
-
 
     describe('multiples', () => {
         it('Returns the sum of all the multiples of 3 or 5 below the number passed in', () => {
@@ -500,15 +539,22 @@ describe('6kyu', () => {
         });
     });
 
-
     describe('findUniq', () => {
         it('Return the only unique number from an array', () => {
-            assert.strictEqual(findUniq([ 1, 0, 0 ]), 1);
-            assert.strictEqual(findUniq([ 0, 1, 0 ]), 1);
-            assert.strictEqual(findUniq([ 0, 0, 1 ]), 1);
-            assert.strictEqual(findUniq([ 1, 1, 1, 2, 1, 1 ]), 2);
-            assert.strictEqual(findUniq([ 1, 1, 2, 1, 1 ]), 2);
-            assert.strictEqual(findUniq([ 3, 10, 3, 3, 3 ]), 10);
+            assert.strictEqual(findUniq([1, 0, 0]), 1);
+            assert.strictEqual(findUniq([0, 1, 0]), 1);
+            assert.strictEqual(findUniq([0, 0, 1]), 1);
+            assert.strictEqual(findUniq([1, 1, 1, 2, 1, 1]), 2);
+            assert.strictEqual(findUniq([1, 1, 2, 1, 1]), 2);
+            assert.strictEqual(findUniq([3, 10, 3, 3, 3]), 10);
+        });
+    });
+
+    describe('splitString', () => {
+        it('Split the string into pairs of two characters', () => {
+            assert.deepEqual(splitString('abcdef'), ['ab', 'cd', 'ef']);
+            assert.deepEqual(splitString('abcdefg'), ['ab', 'cd', 'ef', 'g_']);
+            assert.deepEqual(splitString(''), []);
         });
     });
 });
