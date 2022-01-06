@@ -29,6 +29,7 @@ const alphabetPosition = require('../src/6kyu/27-replace-with-alphabet-position/
 const uniqueInOrder = require('../src/6kyu/28-unique-in-order/uniqueInOrder');
 const sortArray = require('../src/6kyu/29-sort-the-odd/sortArray');
 const multiples = require('../src/6kyu/30-multiples-of-3-or-5/multiples');
+const findUniq = require('../src/6kyu/31-find-the-unique-number/findUniq');
 
 
 describe('6kyu', () => {
@@ -496,6 +497,18 @@ describe('6kyu', () => {
     describe('multiples', () => {
         it('Returns the sum of all the multiples of 3 or 5 below the number passed in', () => {
             assert.strictEqual(multiples(10), 23);
+        });
+    });
+
+
+    describe('findUniq', () => {
+        it('Return the only unique number from an array', () => {
+            assert.strictEqual(findUniq([ 1, 0, 0 ]), 1);
+            assert.strictEqual(findUniq([ 0, 1, 0 ]), 1);
+            assert.strictEqual(findUniq([ 0, 0, 1 ]), 1);
+            assert.strictEqual(findUniq([ 1, 1, 1, 2, 1, 1 ]), 2);
+            assert.strictEqual(findUniq([ 1, 1, 2, 1, 1 ]), 2);
+            assert.strictEqual(findUniq([ 3, 10, 3, 3, 3 ]), 10);
         });
     });
 });
