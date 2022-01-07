@@ -32,6 +32,8 @@ const multiples = require('../src/6kyu/30-multiples-of-3-or-5/multiples');
 const findUniq = require('../src/6kyu/31-find-the-unique-number/findUniq');
 const splitString = require('../src/6kyu/32-split-strings/splitString');
 const high = require('../src/6kyu/33-highest-scoring-word/high');
+const findOutlier = require('../src/6kyu/34-find-the-parity-outlier/findOutlier');
+const formatString = require('../src/6kyu/35-format-a-string-of-names/formatString');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -573,5 +575,51 @@ describe('6kyu', () => {
             assert.strictEqual(high('d bb'), 'd');
             assert.strictEqual(high('aaa b'), 'aaa');
         });
+    });
+
+    describe('findOutlier', () => {
+        it('Either, an array composed entirely of odd integers, or entirely composed of even integers, except for a single integer N. Return this "outlier" N.', () => {
+            assert.strictEqual(findOutlier([0, 1, 2]), 1);
+            assert.strictEqual(findOutlier([1, 2, 3]), 2);
+            assert.strictEqual(findOutlier([2, 6, 8, 10, 3]), 3);
+            assert.strictEqual(findOutlier([0, 0, 3, 0, 0]), 3);
+            assert.strictEqual(findOutlier([1, 1, 0, 1, 1]), 0);
+        });
+    });
+});
+
+describe('formatString', () => {
+    it('Return a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand', () => {
+        assert.strictEqual(
+            formatString([
+                { name: 'Bart' },
+                { name: 'Lisa' },
+                { name: 'Maggie' },
+                { name: 'Homer' },
+                { name: 'Marge' },
+            ]),
+            'Bart, Lisa, Maggie, Homer & Marge',
+            'Must work with many names'
+        );
+        assert.strictEqual(
+            formatString([
+                { name: 'Bart' },
+                { name: 'Lisa' },
+                { name: 'Maggie' },
+            ]),
+            'Bart, Lisa & Maggie',
+            'Must work with many names'
+        );
+        assert.strictEqual(
+            formatString([{ name: 'Bart' }, { name: 'Lisa' }]),
+            'Bart & Lisa',
+            'Must work with two names'
+        );
+        assert.strictEqual(
+            formatString([{ name: 'Bart' }]),
+            'Bart',
+            'Wrong output for a single name'
+        );
+        assert.strictEqual(formatString([]), '', 'Must work with no names');
     });
 });
