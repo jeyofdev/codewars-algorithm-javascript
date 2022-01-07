@@ -31,6 +31,7 @@ const sortArray = require('../src/6kyu/29-sort-the-odd/sortArray');
 const multiples = require('../src/6kyu/30-multiples-of-3-or-5/multiples');
 const findUniq = require('../src/6kyu/31-find-the-unique-number/findUniq');
 const splitString = require('../src/6kyu/32-split-strings/splitString');
+const high = require('../src/6kyu/33-highest-scoring-word/high');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -555,6 +556,22 @@ describe('6kyu', () => {
             assert.deepEqual(splitString('abcdef'), ['ab', 'cd', 'ef']);
             assert.deepEqual(splitString('abcdefg'), ['ab', 'cd', 'ef', 'g_']);
             assert.deepEqual(splitString(''), []);
+        });
+    });
+
+    describe('high', () => {
+        it('Return the highest scoring word. Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.', () => {
+            assert.strictEqual(high('man i need a taxi up to ubud'), 'taxi');
+            assert.strictEqual(
+                high('what time are we climbing up the volcano'),
+                'volcano'
+            );
+            assert.strictEqual(high('take me to semynak'), 'semynak');
+            assert.strictEqual(high('aa b'), 'aa');
+            assert.strictEqual(high('b aa'), 'b');
+            assert.strictEqual(high('bb d'), 'bb');
+            assert.strictEqual(high('d bb'), 'd');
+            assert.strictEqual(high('aaa b'), 'aaa');
         });
     });
 });
