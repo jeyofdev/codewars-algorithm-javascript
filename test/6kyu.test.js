@@ -37,6 +37,7 @@ const formatString = require('../src/6kyu/35-format-a-string-of-names/formatStri
 const breakCamelCase = require('../src/6kyu/36-break-camelCase/breakCamelCase');
 const encryptThis = require('../src/6kyu/37-encrypt-this/encryptThis');
 const validPhoneNumber = require('../src/6kyu/38-valid-phone-number/validPhoneNumber');
+const spinWords = require('../src/6kyu/39-Stop-gninnipS-My-sdroW/spinWords');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -665,6 +666,33 @@ describe('6kyu', () => {
     describe('validPhoneNumber', () => {
         it('Check a string, and returns true if it is in the form of a phone number', () => {
             assert.strictEqual(validPhoneNumber('(123) 456-7890'), true);
+        });
+    });
+
+    describe('spinWords', () => {
+        it('Returns a string but with all five or more letter words reversed', () => {
+            assert.strictEqual(spinWords('Welcome'), 'emocleW');
+            assert.strictEqual(
+                spinWords('Hey fellow warriors'),
+                'Hey wollef sroirraw'
+            );
+            assert.strictEqual(spinWords('This is a test'), 'This is a test');
+            assert.strictEqual(
+                spinWords('This is another test'),
+                'This is rehtona test'
+            );
+            assert.strictEqual(
+                spinWords('You are almost to the last test'),
+                'You are tsomla to the last test'
+            );
+            assert.strictEqual(
+                spinWords('Just kidding there is still one more'),
+                'Just gniddik ereht is llits one more'
+            );
+            assert.strictEqual(
+                spinWords('Seriously this is the last one'),
+                'ylsuoireS this is the last one'
+            );
         });
     });
 });
