@@ -34,6 +34,7 @@ const splitString = require('../src/6kyu/32-split-strings/splitString');
 const high = require('../src/6kyu/33-highest-scoring-word/high');
 const findOutlier = require('../src/6kyu/34-find-the-parity-outlier/findOutlier');
 const formatString = require('../src/6kyu/35-format-a-string-of-names/formatString');
+const breakCamelCase = require('../src/6kyu/36-break-camelCase/breakCamelCase');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -586,40 +587,50 @@ describe('6kyu', () => {
             assert.strictEqual(findOutlier([1, 1, 0, 1, 1]), 0);
         });
     });
-});
 
-describe('formatString', () => {
-    it('Return a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand', () => {
-        assert.strictEqual(
-            formatString([
-                { name: 'Bart' },
-                { name: 'Lisa' },
-                { name: 'Maggie' },
-                { name: 'Homer' },
-                { name: 'Marge' },
-            ]),
-            'Bart, Lisa, Maggie, Homer & Marge',
-            'Must work with many names'
-        );
-        assert.strictEqual(
-            formatString([
-                { name: 'Bart' },
-                { name: 'Lisa' },
-                { name: 'Maggie' },
-            ]),
-            'Bart, Lisa & Maggie',
-            'Must work with many names'
-        );
-        assert.strictEqual(
-            formatString([{ name: 'Bart' }, { name: 'Lisa' }]),
-            'Bart & Lisa',
-            'Must work with two names'
-        );
-        assert.strictEqual(
-            formatString([{ name: 'Bart' }]),
-            'Bart',
-            'Wrong output for a single name'
-        );
-        assert.strictEqual(formatString([]), '', 'Must work with no names');
+    describe('formatString', () => {
+        it('Return a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand', () => {
+            assert.strictEqual(
+                formatString([
+                    { name: 'Bart' },
+                    { name: 'Lisa' },
+                    { name: 'Maggie' },
+                    { name: 'Homer' },
+                    { name: 'Marge' },
+                ]),
+                'Bart, Lisa, Maggie, Homer & Marge',
+                'Must work with many names'
+            );
+            assert.strictEqual(
+                formatString([
+                    { name: 'Bart' },
+                    { name: 'Lisa' },
+                    { name: 'Maggie' },
+                ]),
+                'Bart, Lisa & Maggie',
+                'Must work with many names'
+            );
+            assert.strictEqual(
+                formatString([{ name: 'Bart' }, { name: 'Lisa' }]),
+                'Bart & Lisa',
+                'Must work with two names'
+            );
+            assert.strictEqual(
+                formatString([{ name: 'Bart' }]),
+                'Bart',
+                'Wrong output for a single name'
+            );
+            assert.strictEqual(formatString([]), '', 'Must work with no names');
+        });
+    });
+
+    describe('breakCamelCase', () => {
+        it('Break up camel casing, using a space between words', () => {
+            assert.strictEqual(breakCamelCase('camelCasing'), 'camel Casing');
+            assert.strictEqual(
+                breakCamelCase('camelCasingTest'),
+                'camel Casing Test'
+            );
+        });
     });
 });
