@@ -36,6 +36,7 @@ const findOutlier = require('../src/6kyu/34-find-the-parity-outlier/findOutlier'
 const formatString = require('../src/6kyu/35-format-a-string-of-names/formatString');
 const breakCamelCase = require('../src/6kyu/36-break-camelCase/breakCamelCase');
 const encryptThis = require('../src/6kyu/37-encrypt-this/encryptThis');
+const validPhoneNumber = require('../src/6kyu/38-valid-phone-number/validPhoneNumber');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -658,6 +659,12 @@ describe('6kyu', () => {
                 encryptThis('Thank you Piotr for all your help'),
                 '84kanh 121uo 80roti 102ro 97ll 121ruo 104ple'
             );
+        });
+    });
+
+    describe('validPhoneNumber', () => {
+        it('Check a string, and returns true if it is in the form of a phone number', () => {
+            assert.strictEqual(validPhoneNumber('(123) 456-7890'), true);
         });
     });
 });
