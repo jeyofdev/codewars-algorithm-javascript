@@ -40,6 +40,7 @@ const validPhoneNumber = require('../src/6kyu/38-valid-phone-number/validPhoneNu
 const spinWords = require('../src/6kyu/39-Stop-gninnipS-My-sdroW/spinWords');
 const count = require('../src/6kyu/40-count-characters-in-your-string/count');
 const isValidIP = require('../src/6kyu/41-ip-validation/isValidIP');
+const pyramid = require('../src/6kyu/42-pyramid-array/pyramid');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -724,6 +725,15 @@ describe('6kyu', () => {
             assert.strictEqual(isValidIP('12.34.56.-7'), false);
             assert.strictEqual(isValidIP('1.2.3.4\n'), false);
             assert.strictEqual(isValidIP('\n1.2.3.4'), false);
+        });
+    });
+
+    describe('pyramid', () => {
+        it('Return when given a number >= 0, an Array of ascending length subarrays', () => {
+            assert.deepEqual(pyramid(0), []);
+            assert.deepStrictEqual(pyramid(1), [[1]]);
+            assert.deepStrictEqual(pyramid(2), [[1], [1, 1]]);
+            assert.deepStrictEqual(pyramid(3), [[1], [1, 1], [1, 1, 1]]);
         });
     });
 });
