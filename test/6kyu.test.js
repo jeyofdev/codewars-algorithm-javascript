@@ -38,6 +38,7 @@ const breakCamelCase = require('../src/6kyu/36-break-camelCase/breakCamelCase');
 const encryptThis = require('../src/6kyu/37-encrypt-this/encryptThis');
 const validPhoneNumber = require('../src/6kyu/38-valid-phone-number/validPhoneNumber');
 const spinWords = require('../src/6kyu/39-Stop-gninnipS-My-sdroW/spinWords');
+const count = require('../src/6kyu/40-count-characters-in-your-string/count');
 
 describe('6kyu', () => {
     describe('findOdd', () => {
@@ -693,6 +694,13 @@ describe('6kyu', () => {
                 spinWords('Seriously this is the last one'),
                 'ylsuoireS this is the last one'
             );
+        });
+    });
+
+    describe('count', () => {
+        it('Count all the occurring characters in a string', () => {
+            assert.deepEqual(count('aba'), { a: 2, b: 1 });
+            assert.deepEqual(count(''), {});
         });
     });
 });
