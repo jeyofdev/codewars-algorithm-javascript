@@ -3,6 +3,7 @@ const orderWeight = require('../src/5kyu/1-weight_for_weight/orderWeight');
 const perimeter = require('../src/5kyu/2-perimeter_of_squares_in_a_rectangle/perimeter');
 const moveZeros = require('../src/5kyu/3-moving-zeros-to-the-end/moveZeros');
 const generateHashtag = require('../src/5kyu/4-the-hashtag-generator/generateHashtag');
+const domainName = require('../src/5kyu/5-extract-the-domain-name-from-a-URL/domainName');
 
 describe('5kyu', () => {
     describe('orderWeight', () => {
@@ -90,6 +91,15 @@ describe('5kyu', () => {
                 false,
                 'Too long'
             );
+        });
+    });
+
+    describe('domainName', () => {
+        it('In a url, parses out just the domain name and returns it as a string', () => {
+            assert.strictEqual(domainName('http://google.com'), 'google');
+            assert.strictEqual(domainName('http://google.co.jp'), 'google');
+            assert.strictEqual(domainName('www.xakep.ru'), 'xakep');
+            assert.strictEqual(domainName('https://youtube.com'), 'youtube');
         });
     });
 });
