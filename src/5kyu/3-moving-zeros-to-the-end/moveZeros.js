@@ -3,7 +3,7 @@
  *
  * @param {array} arr
  */
-const moveZeros = function (arr) {
+const moveZeros = (arr) => {
     const zeros = [];
     const newArr = [];
 
